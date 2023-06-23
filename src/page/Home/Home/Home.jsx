@@ -1,9 +1,12 @@
+import DetailsBanner from "../DetailsBanner/DetailsBanner";
+import TopBanner from "../TopBanner/TopBanner";
 
 
 const Home = () => {
     return (
         <div>
-            this is home
+            <TopBanner/>
+            <DetailsBanner/>
         </div>
     );
 };

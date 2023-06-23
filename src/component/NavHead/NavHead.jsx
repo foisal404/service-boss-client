@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 const NavHead = () => {
   const navItems = (
     <>
       
         <li>
-          <a>All Services</a>
+          <Link to='/allservies'>All Services</Link>
         </li>
         
         <li>
@@ -22,7 +24,7 @@ const NavHead = () => {
     </>
   );
   return (
-    <div className="navbar lg:px-32 bg-base-100">
+    <div className="navbar lg:px-32 bg-base-100 sticky top-0 z-10">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -49,7 +51,7 @@ const NavHead = () => {
             {navItems}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">serVice</a>
+        <Link to='/' className="btn btn-ghost normal-case text-xl">serVice</Link>
       </div>
       <div className="navbar-end hidden lg:flex">
       <ul className="menu menu-horizontal px-1">{navItems}</ul></div>
