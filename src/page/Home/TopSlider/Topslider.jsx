@@ -25,6 +25,7 @@ const Topslider = () => {
           </div>
         </Carousel>
       </div>
+      
     </>
   );
 };
