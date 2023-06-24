@@ -22,7 +22,7 @@ const TopBanner = () => {
             <div className="max-w-md">
               <h1 className="mb-5 text-5xl font-bold">
                 Welcome to{" "}
-                <span className=" bg-green-500 rounded-lg">Service</span> Boss
+                <span className=" bg-green-500 rounded-lg">Service</span> HERO
               </h1>
               <p className="mb-5 text-slate-300">
                 Where Service Meets Perfection!Introducing Service Boss, the

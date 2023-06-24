@@ -2,6 +2,7 @@ import banner1 from "../../../assets/image/banner/banner1.jpg";
 import banner2 from "../../../assets/image/banner/banner3.jpg";
 import banner3 from "../../../assets/image/banner/banner.jpg";
 import banner4 from "../../../assets/image/banner/banner4.webp";
+import banner7 from "../../../assets/image/banner/banner7.jpg";
 
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -22,6 +23,9 @@ const Topslider = () => {
           </div>
           <div className="w-full max-h-[70vh]">
             <img src={banner4} />
+          </div>
+          <div className="w-full max-h-[70vh]">
+            <img src={banner7} />
           </div>
         </Carousel>
       </div>

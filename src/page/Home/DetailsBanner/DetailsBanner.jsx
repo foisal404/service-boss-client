@@ -16,7 +16,7 @@ const DetailsBanner = () => {
           </div>
         </div>
         <div className="lg:w-1/2">
-          <h1 className="text-5xl font-bold">Why Urban Service !</h1>
+          <h1 className="text-5xl font-bold">Why HERO Service !</h1>
           <div className="flex py-5">
             <img src={icon1} className="w-20 h-20" alt="" />
             <div>
