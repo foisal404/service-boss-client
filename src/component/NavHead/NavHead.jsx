@@ -9,7 +9,7 @@ const NavHead = () => {
         </li>
         
         <li>
-          <a>Login</a>
+          <Link to='/login'>Login</Link>
         </li>
         {/* <li>
             <details>
