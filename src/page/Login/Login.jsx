@@ -1,6 +1,8 @@
 import { useForm} from "react-hook-form"
 import { Link } from "react-router-dom";
 import banner from '../../assets/image/Frame.png'
+import { useContext } from "react";
+import { authContext } from "../../Auth/AuthProvider";
 
 
 const Login = () => {
@@ -10,6 +12,8 @@ const Login = () => {
         formState: { errors },
       } = useForm();
       const onSubmit = (data) => console.log(data)
+      const {name}=useContext(authContext)
+      console.log(name);
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:gap-32 lg:flex-row">
