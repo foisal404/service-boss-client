@@ -12,8 +12,17 @@ const Login = () => {
         formState: { errors },
       } = useForm();
       const onSubmit = (data) => console.log(data)
-      const {name}=useContext(authContext)
-      console.log(name);
+      const {googleLogin}=useContext(authContext)
+      const handleGoogle=()=>{
+        googleLogin()
+        .then(result=>{
+            const currentUser=result.user;
+            console.log(currentUser);
+        })
+        .catch(error=>{
+          console.error(error.message);
+        })
+      }
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:gap-32 lg:flex-row">
@@ -48,7 +57,7 @@ const Login = () => {
             </div>
           </form>
           <div className="card-body pt-0">
-            <button className="btn font-bold normal-case w-full bg-orange-200"  type="submit">Google</button>
+            <button className="btn font-bold normal-case w-full bg-orange-200"  onClick={handleGoogle}>Google</button>
           </div>
         </div>
       </div>
