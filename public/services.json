@@ -1,0 +1,81 @@
+[
+    {
+      "_id": "1",
+      "category": "AC Repair Services",
+      "title": "AC Repair",
+      "subtitle": "Expert technicians for AC repair",
+      "image": "https://cielowigle.com/wp-content/uploads/2021/09/AC-repair.jpg",
+      "service_details": "We provide professional AC repair services to ensure optimal cooling and performance.",
+      "ratings": 4.5,
+      "service_includes": {
+        "whats_included": [
+          "AC troubleshooting and diagnosis",
+          "AC compressor repair",
+          "AC refrigerant recharge",
+          "AC fan motor replacement"
+        ],
+        "whats_excluded": [
+          "Replacement parts (additional charges may apply)",
+          "Ductwork modifications or repairs"
+        ],
+        "available_services": [
+          "Emergency AC repair",
+          "Regular maintenance plans",
+          "Extended warranty options"
+        ]
+      },
+      "price": 99.99
+    },
+    {
+      "_id": "2",
+      "category": "AC Repair Services",
+      "title": "AC Installation",
+      "subtitle": "Efficient AC installation services",
+      "image": "https://s3.ap-south-1.amazonaws.com/cdn-shebaxyz/images/categories_images/thumbs/1619427700_acservicing.jpg",
+      "service_details": "Our skilled technicians offer AC installation services to help you stay cool during hot weather.",
+      "ratings": 4.2,
+      "service_includes": {
+        "whats_included": [
+          "New AC unit installation",
+          "Ductwork and vent installation",
+          "Thermostat setup and configuration",
+          "AC system testing and calibration"
+        ],
+        "whats_excluded": [
+          "Additional electrical work (if required)",
+          "Removal and disposal of old AC unit"
+        ],
+        "available_services": [
+          "Customized zoning options",
+          "Energy-efficient AC upgrades"
+        ]
+      },
+      "price": 199.99
+    },
+    {
+      "_id": "3",
+      "category": "AC Repair Services",
+      "title": "AC Maintenance",
+      "subtitle": "Regular AC maintenance for optimal performance",
+      "image": "https://www.matrixsolutions.tv/wp-content/uploads/2014/11/service-ac.jpg",
+      "service_details": "We provide comprehensive AC maintenance services to keep your unit running smoothly and efficiently.",
+      "ratings": 4.7,
+      "service_includes": {
+        "whats_included": [
+          "AC filter replacement",
+          "Coil cleaning and inspection",
+          "Condensate drain cleaning",
+          "Electrical connections and wiring check"
+        ],
+        "whats_excluded": [
+          "Major repairs or part replacements",
+          "Duct cleaning"
+        ],
+        "available_services": [
+          "Annual maintenance contracts",
+          "Air quality assessments"
+        ]
+      },
+      "price": 79.99
+    }
+  ]

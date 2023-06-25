@@ -16,25 +16,25 @@ const DetailsBanner = () => {
           </div>
         </div>
         <div className="lg:w-1/2">
-          <h1 className="text-5xl font-bold">Why HERO Service !</h1>
+          <h1 className="text-5xl font-bold">HERO Service !</h1>
           <div className="flex py-5">
             <img src={icon1} className="w-20 h-20" alt="" />
             <div>
-              <h2 className="font-bold">Transparent Price</h2>
+              <h2 className="font-bold">Fullfill recuirments</h2>
               <p>See fixed prices before you book. No hidden charges.</p>
             </div>
           </div>
           <div className="flex py-5">
             <img src={icon2} className="w-20 h-20" alt="" />
             <div>
-              <h2 className="font-bold">Transparent Price</h2>
+              <h2 className="font-bold">Customer Satisfaction</h2>
               <p>See fixed prices before you book. No hidden charges.</p>
             </div>
           </div>
           <div className="flex py-5">
             <img src={icon3} className="w-20 h-20" alt="" />
             <div>
-              <h2 className="font-bold ">Transparent Price</h2>
+              <h2 className="font-bold ">Attractive offers</h2>
               <p>See fixed prices before you book. No hidden charges.</p>
             </div>
           </div>
