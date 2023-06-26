@@ -3,24 +3,54 @@ import { Link } from "react-router-dom";
 import banner from '../../assets/image/Frame.png'
 import { useContext } from "react";
 import { authContext } from "../../Auth/AuthProvider";
+import Swal from "sweetalert2";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
+  const {SignIn,googleLogin}=useContext(authContext)
     const {
         register,
         handleSubmit,
         formState: { errors },
       } = useForm();
-      const onSubmit = (data) => console.log(data)
-      const {googleLogin}=useContext(authContext)
+      const onSubmit = (data) => {
+        // console.log(data)
+        const {email,password}=data;
+        SignIn(email,password)
+        .then(result=>{
+          const currentUser=result.user;
+          console.log(currentUser);
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Succesfully Login',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        })
+        .catch(error=>{
+          console.error(error.message);
+          toast(`${error.message.slice(17)}`,{theme: "dark"})
+        })
+      }
       const handleGoogle=()=>{
         googleLogin()
         .then(result=>{
             const currentUser=result.user;
             console.log(currentUser);
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Succesfully Google Login',
+              showConfirmButton: false,
+              timer: 1500
+            })
         })
         .catch(error=>{
           console.error(error.message);
+          toast(`${error.message.slice(17)}`,{theme: "dark"})
         })
       }
   return (

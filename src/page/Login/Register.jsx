@@ -1,9 +1,13 @@
 import { useForm} from "react-hook-form"
 import { Link } from "react-router-dom";
 import banner from '../../assets/image/Frame.png'
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { authContext } from "../../Auth/AuthProvider";
+import Swal from "sweetalert2";
+import { toast } from "react-toastify";
 const Register = () => {
     const [error,setErrror]=useState(false)
+    const {updateUserProfile,singUp,googleLogin}=useContext(authContext);
     const {
         register,
         handleSubmit,
@@ -12,11 +16,56 @@ const Register = () => {
       const onSubmit = (data) => {
         setErrror(false)
         console.log(data)
+        const {name,email,photo,password}=data;
         if(data.confirm!== data.password){
             setErrror(true)
             return
         }
+        else{
+          singUp(email,password)
+          .then(result=>{
+            const currentUser=result.user;
+            console.log(currentUser);
+            updateUserProfile(photo,name)
+            .then(() => {
+              console.log("profile uodate");
+              Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Succesfully Register',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            }).catch((error) => {
+              console.error(error.message);
+              toast(`${error.message.slice(17)}`,{theme: "dark"})
+            });
+          })
+          .catch(error=>{
+            console.error(error.message);
+            toast(`${error.message.slice(17)}`,{theme: "dark"})
+          })
+        }
       }
+      const handleGoogle=()=>{
+        googleLogin()
+        .then(result=>{
+            const currentUser=result.user;
+            console.log(currentUser);
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Succesfully Google Login',
+              showConfirmButton: false,
+              timer: 1500
+            })
+        })
+        .catch(error=>{
+          console.error(error.message);
+          toast(`${error.message.slice(17)}`,{theme: "dark"})
+        })
+      }
+      
     return (
         <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:gap-32 lg:flex-row">
@@ -44,7 +93,7 @@ const Register = () => {
               <label className="label">
                 <span className="label-text">Photo</span>
               </label>
-              <input defaultValue="Photo" className="p-2 rounded-lg bg-slate-100" {...register("photo", { required: true })} />
+              <input  className="p-2 rounded-lg bg-slate-100" {...register("photo", { required: true })} />
               {errors.photo?.type === "required" && (<p role="alert" className="text-red-500 label-text-alt">Photo is required *</p>)}
             </div>
             <div className="form-control">
@@ -75,7 +124,7 @@ const Register = () => {
             </div>
           </form>
           <div className="card-body pt-0">
-            <button className="btn font-bold normal-case w-full bg-orange-200"  type="submit">Google</button>
+            <button className="btn font-bold normal-case w-full bg-orange-200" onClick={handleGoogle} type="submit">Google</button>
           </div>
         </div>
       </div>
