@@ -5,6 +5,7 @@ import AllServices from "../../page/AllServices/Allservices/AllServices";
 import DetailsService from "../../page/AllServices/DetailsService/DetailsService";
 import Login from "../../page/Login/Login";
 import Register from "../../page/Login/Register";
+import useService from "../../hooks/useService";
 
 const router = createBrowserRouter([
     {
@@ -21,7 +22,8 @@ const router = createBrowserRouter([
         },
         {
           path:"/allservies/:id",
-          element:<DetailsService/>
+          element:<DetailsService/>,
+          loader: ({params})=> useService(`${params.id}`)
         },
         {
           path:'/login',

@@ -1,24 +1,18 @@
-import { useEffect, useState } from "react";
+
 import ServiceCard from "../../../component/ServiceCard";
+import useServices from "../../../hooks/useServices";
 
 
 const Services = () => {
-    const [data,setData]=useState([]);
-    useEffect(()=>{
-        fetch('services.json')
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-            setData(data)
-        })
-        console.log(data);
-    },[])
+    
+    const [services]=useServices();
+    console.log(services);
     return (
         <div className="p-20">
             <h2 className="text-center text-4xl font-bold">All Services</h2>
             <div className="py-20 grid grid-cols-3">
                 {
-                    data.map(doc=><ServiceCard key={doc._id} data={doc} />)
+                    services.map(doc=><ServiceCard key={doc._id} data={doc} />)
                 }
             </div>
         </div>
