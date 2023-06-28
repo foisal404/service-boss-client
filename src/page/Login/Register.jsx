@@ -15,7 +15,7 @@ const Register = () => {
       } = useForm();
       const onSubmit = (data) => {
         setErrror(false)
-        console.log(data)
+        // console.log(data)
         const {name,email,photo,password}=data;
         if(data.confirm!== data.password){
             setErrror(true)
@@ -25,10 +25,23 @@ const Register = () => {
           singUp(email,password)
           .then(result=>{
             const currentUser=result.user;
-            console.log(currentUser);
+            // console.log(currentUser);
             updateUserProfile(photo,name)
             .then(() => {
-              console.log("profile uodate");
+              console.log("profile update");
+              console.log(currentUser);
+              const data={username: currentUser.displayName, useremail: currentUser.email, role:"user"}
+              fetch('http://localhost:5000/user',{
+                method:"POST",
+                headers:{
+                  "content-type":"application/json"
+                },
+                body: JSON.stringify(data)
+              })
+              .then(res=>res.json())
+              .then(data=>{
+                console.log(data);
+              })
               Swal.fire({
                 position: 'top-end',
                 icon: 'success',
