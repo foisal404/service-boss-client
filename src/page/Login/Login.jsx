@@ -6,6 +6,7 @@ import { authContext } from "../../Auth/AuthProvider";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import addUser from "../../hooks/addUser";
 
 
 const Login = () => {
@@ -39,14 +40,9 @@ const Login = () => {
         googleLogin()
         .then(result=>{
             const currentUser=result.user;
-            console.log(currentUser);
-            Swal.fire({
-              position: 'top-end',
-              icon: 'success',
-              title: 'Succesfully Google Login',
-              showConfirmButton: false,
-              timer: 1500
-            })
+            // console.log(currentUser);
+            const data={username: currentUser.displayName, useremail: currentUser.email, role:"user"}
+            addUser(data)
         })
         .catch(error=>{
           console.error(error.message);

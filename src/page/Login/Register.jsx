@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import banner from '../../assets/image/Frame.png'
 import { useContext, useState } from "react";
 import { authContext } from "../../Auth/AuthProvider";
-import Swal from "sweetalert2";
 import { toast } from "react-toastify";
+import addUser from "../../hooks/addUser";
 const Register = () => {
     const [error,setErrror]=useState(false)
     const {updateUserProfile,singUp,googleLogin}=useContext(authContext);
@@ -31,24 +31,8 @@ const Register = () => {
               console.log("profile update");
               console.log(currentUser);
               const data={username: currentUser.displayName, useremail: currentUser.email, role:"user"}
-              fetch('http://localhost:5000/user',{
-                method:"POST",
-                headers:{
-                  "content-type":"application/json"
-                },
-                body: JSON.stringify(data)
-              })
-              .then(res=>res.json())
-              .then(data=>{
-                console.log(data);
-              })
-              Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Succesfully Register',
-                showConfirmButton: false,
-                timer: 1500
-              })
+              addUser(data);
+              
             }).catch((error) => {
               console.error(error.message);
               toast(`${error.message.slice(17)}`,{theme: "dark"})
@@ -64,14 +48,10 @@ const Register = () => {
         googleLogin()
         .then(result=>{
             const currentUser=result.user;
-            console.log(currentUser);
-            Swal.fire({
-              position: 'top-end',
-              icon: 'success',
-              title: 'Succesfully Google Login',
-              showConfirmButton: false,
-              timer: 1500
-            })
+            // console.log(currentUser);
+            const data={username: currentUser.displayName, useremail: currentUser.email, role:"user"}
+            addUser(data)
+            // console.log(data);
         })
         .catch(error=>{
           console.error(error.message);
@@ -92,14 +72,14 @@ const Register = () => {
               <label className="label">
                 <span className="label-text">Name</span>
               </label>
-              <input defaultValue="name" className="p-2 rounded-lg bg-slate-100" {...register("name", { required: true })} />
+              <input  className="p-2 rounded-lg bg-slate-100" {...register("name", { required: true })} />
               {errors.name?.type === "required" && (<p role="alert" className="text-red-500 label-text-alt">Name is required *</p>)}
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
-              <input defaultValue="email" className="p-2 rounded-lg bg-slate-100" {...register("email", { required: true })} />
+              <input  className="p-2 rounded-lg bg-slate-100" {...register("email", { required: true })} />
               {errors.email?.type === "required" && (<p role="alert" className="text-red-500 label-text-alt">email is required *</p>)}
             </div>
             <div className="form-control">
