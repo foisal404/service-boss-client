@@ -9,22 +9,34 @@ const NavHead = () => {
   const handleLogout = () => {
     logOut()
       .then(() => {
-        toast.info('Logout Succesfully',{theme: "dark"})
+        toast.info("Logout Succesfully", { theme: "dark" });
       })
       .catch((error) => {
         console.error(error.message);
-        toast(`${error.message.slice(17)}`,{theme: "dark"})
+        toast(`${error.message.slice(17)}`, { theme: "dark" });
       });
   };
   const navItems = (
     <>
       <li>
-        <Link to="/allservies" className="my-auto">All Services</Link>
+        <Link to="/allservies" className="my-auto">
+          All Services
+        </Link>
       </li>
       {user ? (
         <>
+         <li>
+              <Link to="/dashboard" className="my-auto">
+                Dashboard
+              </Link>
+            </li>
           <span className="mx-3 my-0">
-            <label tabIndex={0} className="btn   btn-circle avatar tooltip  tooltip-bottom" data-tip={`${user.displayName}`}>
+           
+            <label
+              tabIndex={0}
+              className="btn   btn-circle avatar tooltip  tooltip-bottom"
+              data-tip={`${user.displayName}`}
+            >
               <div className="w-10  rounded-full mx-auto mt-1 ">
                 <img src={`${user.photoURL}`} />
               </div>

@@ -6,6 +6,8 @@ import DetailsService from "../../page/AllServices/DetailsService/DetailsService
 import Login from "../../page/Login/Login";
 import Register from "../../page/Login/Register";
 import useService from "../../hooks/useService";
+import Dashboard from "../../page/Dashboard/Dashboard";
+import PrivateRoute from "../PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -35,6 +37,11 @@ const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path:"/dashboard",
+      element:<PrivateRoute><Dashboard/></PrivateRoute>,
+      
+    }
 ]);
 
 export default router;
