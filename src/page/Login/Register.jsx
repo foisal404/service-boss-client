@@ -4,7 +4,7 @@ import banner from '../../assets/image/Frame.png'
 import { useContext, useState } from "react";
 import { authContext } from "../../Auth/AuthProvider";
 import { toast } from "react-toastify";
-import addUser from "../../hooks/addUser";
+import useaddUser from "../../hooks/addUser";
 const Register = () => {
     const [error,setErrror]=useState(false)
     const {updateUserProfile,singUp,googleLogin}=useContext(authContext);
@@ -30,8 +30,8 @@ const Register = () => {
             .then(() => {
               console.log("profile update");
               console.log(currentUser);
-              const data={username: currentUser.displayName, useremail: currentUser.email, role:"user"}
-              addUser(data);
+              const data={username: currentUser.displayName, useremail: currentUser.email,userphoto:currentUser.photoURL, role:"user"}
+              useaddUser(data)
               
             }).catch((error) => {
               console.error(error.message);
@@ -49,8 +49,8 @@ const Register = () => {
         .then(result=>{
             const currentUser=result.user;
             // console.log(currentUser);
-            const data={username: currentUser.displayName, useremail: currentUser.email, role:"user"}
-            addUser(data)
+            const data={username: currentUser.displayName, useremail: currentUser.email,userphoto:currentUser.photoURL, role:"user"}
+            useaddUser(data)
             // console.log(data);
         })
         .catch(error=>{

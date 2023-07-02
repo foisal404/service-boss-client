@@ -1,15 +1,19 @@
 import { useForm} from "react-hook-form"
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import banner from '../../assets/image/Frame.png'
 import { useContext } from "react";
 import { authContext } from "../../Auth/AuthProvider";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import addUser from "../../hooks/addUser";
+import useaddUser from "../../hooks/addUser";
 
 
 const Login = () => {
+  let navigate = useNavigate();
+  let location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
   const {SignIn,googleLogin}=useContext(authContext)
     const {
         register,
@@ -30,6 +34,7 @@ const Login = () => {
             showConfirmButton: false,
             timer: 1500
           })
+          navigate(from, { replace: true });
         })
         .catch(error=>{
           console.error(error.message);
@@ -41,8 +46,8 @@ const Login = () => {
         .then(result=>{
             const currentUser=result.user;
             // console.log(currentUser);
-            const data={username: currentUser.displayName, useremail: currentUser.email, role:"user"}
-            addUser(data)
+            const data={username: currentUser.displayName, useremail: currentUser.email,userphoto:currentUser.photoURL, role:"user"}
+            useaddUser(data)
         })
         .catch(error=>{
           console.error(error.message);

@@ -1,6 +1,6 @@
-import Swal from "sweetalert2";
 
-const addUser = (data) => {
+import Swal from "sweetalert2";
+const useaddUser = (data) => {
   fetch("http://localhost:5000/user", {
     method: "POST",
     headers: {
@@ -10,7 +10,7 @@ const addUser = (data) => {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -20,4 +20,4 @@ const addUser = (data) => {
       })
     });
 };
-export default addUser;
+export default useaddUser;
