@@ -31,12 +31,12 @@ const Dashboard = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/allservies" className="my-auto">
+                <Link to="dashboard/manageservies" className="my-auto">
                   Manage Services
                 </Link>
               </li>
               <li>
-                <Link to="/allservies" className="my-auto">
+                <Link to="dashboard/addservie" className="my-auto">
                   Add Service
                 </Link>
               </li>

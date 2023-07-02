@@ -9,6 +9,8 @@ import useService from "../../hooks/useService";
 import Dashboard from "../../page/Dashboard/Dashboard";
 import PrivateRoute from "../PrivateRoute";
 import AllUser from "../../page/DashBoardPage/Alluser/AllUser";
+import ManageService from "../../page/DashBoardPage/ManageService/ManageService";
+import AddService from "../../page/DashBoardPage/AddService/AddService";
 
 const router = createBrowserRouter([
     {
@@ -21,7 +23,7 @@ const router = createBrowserRouter([
         },
         {
           path:"/allservies",
-          element:<AllServices/> 
+          element:<AllServices/>
         },
         {
           path:"/allservies/:id",
@@ -45,6 +47,14 @@ const router = createBrowserRouter([
         {
           path:'dashboard/allUser',
           element:<AllUser/>
+        },
+        {
+          path:'dashboard/manageservies',
+          element:<ManageService/>
+        },
+        {
+          path:'dashboard/addservie',
+          element:<AddService/>
         }
       ]
       

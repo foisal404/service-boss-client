@@ -1,81 +1,842 @@
 [
-    {
-      "_id": "1",
-      "category": "AC Repair Services",
-      "title": "AC Repair",
-      "subtitle": "Expert technicians for AC repair",
-      "image": "https://cielowigle.com/wp-content/uploads/2021/09/AC-repair.jpg",
-      "service_details": "We provide professional AC repair services to ensure optimal cooling and performance.",
-      "ratings": 4.5,
-      "service_includes": {
-        "whats_included": [
-          "AC troubleshooting and diagnosis",
-          "AC compressor repair",
-          "AC refrigerant recharge",
-          "AC fan motor replacement"
-        ],
-        "whats_excluded": [
-          "Replacement parts (additional charges may apply)",
-          "Ductwork modifications or repairs"
-        ],
-        "available_services": [
-          "Emergency AC repair",
-          "Regular maintenance plans",
-          "Extended warranty options"
-        ]
-      },
-      "price": 99.99
+  {
+    
+    "category": "AC Repair Services",
+    "title": "AC Repair",
+    "subtitle": "Expert technicians for AC repair",
+    "image": "https://cielowigle.com/wp-content/uploads/2021/09/AC-repair.jpg",
+    "service_details": "We provide professional AC repair services to ensure optimal cooling and performance.",
+    "ratings": 4.5,
+    "service_includes": {
+      "whats_included": [
+        "AC troubleshooting and diagnosis",
+        "AC compressor repair",
+        "AC refrigerant recharge",
+        "AC fan motor replacement"
+      ],
+      "whats_excluded": [
+        "Replacement parts (additional charges may apply)",
+        "Ductwork modifications or repairs"
+      ],
+      "available_services": [
+        "Emergency AC repair",
+        "Regular maintenance plans",
+        "Extended warranty options"
+      ]
     },
-    {
-      "_id": "2",
-      "category": "AC Repair Services",
-      "title": "AC Installation",
-      "subtitle": "Efficient AC installation services",
-      "image": "https://s3.ap-south-1.amazonaws.com/cdn-shebaxyz/images/categories_images/thumbs/1619427700_acservicing.jpg",
-      "service_details": "Our skilled technicians offer AC installation services to help you stay cool during hot weather.",
-      "ratings": 4.2,
-      "service_includes": {
-        "whats_included": [
-          "New AC unit installation",
-          "Ductwork and vent installation",
-          "Thermostat setup and configuration",
-          "AC system testing and calibration"
-        ],
-        "whats_excluded": [
-          "Additional electrical work (if required)",
-          "Removal and disposal of old AC unit"
-        ],
-        "available_services": [
-          "Customized zoning options",
-          "Energy-efficient AC upgrades"
-        ]
-      },
-      "price": 199.99
+    "price": 99.99
+  },
+  {
+    
+    "category": "AC Repair Services",
+    "title": "AC Installation",
+    "subtitle": "Efficient AC installation services",
+    "image": "https://s3.ap-south-1.amazonaws.com/cdn-shebaxyz/images/categories_images/thumbs/1619427700_acservicing.jpg",
+    "service_details": "Our skilled technicians offer AC installation services to help you stay cool during hot weather.",
+    "ratings": 4.2,
+    "service_includes": {
+      "whats_included": [
+        "New AC unit installation",
+        "Ductwork and vent installation",
+        "Thermostat setup and configuration",
+        "AC system testing and calibration"
+      ],
+      "whats_excluded": [
+        "Additional electrical work (if required)",
+        "Removal and disposal of old AC unit"
+      ],
+      "available_services": [
+        "Customized zoning options",
+        "Energy-efficient AC upgrades"
+      ]
     },
-    {
-      "_id": "3",
-      "category": "AC Repair Services",
-      "title": "AC Maintenance",
-      "subtitle": "Regular AC maintenance for optimal performance",
-      "image": "https://www.matrixsolutions.tv/wp-content/uploads/2014/11/service-ac.jpg",
-      "service_details": "We provide comprehensive AC maintenance services to keep your unit running smoothly and efficiently.",
-      "ratings": 4.7,
-      "service_includes": {
-        "whats_included": [
-          "AC filter replacement",
-          "Coil cleaning and inspection",
-          "Condensate drain cleaning",
-          "Electrical connections and wiring check"
-        ],
-        "whats_excluded": [
-          "Major repairs or part replacements",
-          "Duct cleaning"
-        ],
-        "available_services": [
-          "Annual maintenance contracts",
-          "Air quality assessments"
-        ]
-      },
-      "price": 79.99
-    }
-  ]
+    "price": 199.99
+  },
+  {
+    
+    "category": "AC Repair Services",
+    "title": "AC Maintenance",
+    "subtitle": "Regular AC maintenance for optimal performance",
+    "image": "https://www.matrixsolutions.tv/wp-content/uploads/2014/11/service-ac.jpg",
+    "service_details": "We provide comprehensive AC maintenance services to keep your unit running smoothly and efficiently.",
+    "ratings": 4.7,
+    "service_includes": {
+      "whats_included": [
+        "AC filter replacement",
+        "Coil cleaning and inspection",
+        "Condensate drain cleaning",
+        "Electrical connections and wiring check"
+      ],
+      "whats_excluded": [
+        "Major repairs or part replacements",
+        "Duct cleaning"
+      ],
+      "available_services": [
+        "Annual maintenance contracts",
+        "Air quality assessments"
+      ]
+    },
+    "price": 79.99
+  },
+  {
+    "category": "Appliance Repair",
+    "title": "Refrigerator Repair",
+    "subtitle": "Expert repair services for refrigerators",
+    "image": "https://content.jdmagicbox.com/comp/def_content/refrigerator_repair_and_services/default-refrigerator-repair-and-services-4.jpg",
+    "service_details": "We provide professional repair services for refrigerators to ensure optimal cooling and performance.",
+    "ratings": 4.5,
+    "service_includes": {
+      "whats_included": [
+        "Compressor repair or replacement",
+        "Thermostat repair or calibration",
+        "Defrost system repair",
+        "Door seal replacement"
+      ],
+      "whats_excluded": [
+        "Replacement parts (additional charges may apply)",
+        "Refrigerant recharge"
+      ],
+      "available_services": [
+        "Ice maker repair",
+        "Water dispenser repair",
+        "Energy efficiency check"
+      ]
+    },
+    "price": 149.99,
+    "unit": "per repair"
+  },
+  {
+    "category": "Appliance Repair",
+    "title": "Washing Machine Repair",
+    "subtitle": "Expert repair services for washing machines",
+    "image": "https://content.jdmagicbox.com/comp/def_content/washing-machine-repair-and-services-videocon/inuoectjqr-washing-machine-repair-and-services-videocon-6-jsw7o.jpg",
+    "service_details": "Our skilled technicians offer professional repair services for washing machines to ensure optimal performance.",
+    "ratings": 4.2,
+    "service_includes": {
+      "whats_included": [
+        "Motor repair or replacement",
+        "Drum repair or replacement",
+        "Control panel repair",
+        "Water pump repair or replacement"
+      ],
+      "whats_excluded": [
+        "Replacement parts (additional charges may apply)",
+        "Installation of new machines"
+      ],
+      "available_services": [
+        "Spin cycle repair",
+        "Lid switch repair",
+        "Maintenance and cleaning"
+      ]
+    },
+    "price": 99.99,
+    "unit": "per repair"
+  },
+  {
+    "category": "Appliance Repair",
+    "title": "Dishwasher Repair",
+    "subtitle": "Expert repair services for dishwashers",
+    "image": "https://blog.herzing.ca/hubfs/Imported_Blog_Media/appliance-technician-Jul-15-2020-02-03-32-37-PM.jpg",
+    "service_details": "We provide professional repair services for dishwashers to ensure optimal dishwashing performance.",
+    "ratings": 4.7,
+    "service_includes": {
+      "whats_included": [
+        "Motor repair or replacement",
+        "Water inlet valve repair",
+        "Control panel repair",
+        "Spray arm repair or replacement"
+      ],
+      "whats_excluded": [
+        "Replacement parts (additional charges may apply)",
+        "Installation of new machines"
+      ],
+      "available_services": [
+        "Drainage system repair",
+        "Timer or control board repair",
+        "Maintenance and cleaning"
+      ]
+    },
+    "price": 119.99,
+    "unit": "per repair"
+  },
+  {
+    "category": "Trips & Travels",
+    "title": "City Tour",
+    "subtitle": "Explore the best attractions of the city",
+    "image": "https://tfe-bd.sgp1.cdn.digitaloceanspaces.com/uploads/1582866546.jpg",
+    "service_details": "Embark on a guided city tour to discover the top landmarks, cultural sites, and hidden gems of the city.",
+    "ratings": 4.5,
+    "service_includes": {
+      "category": "Trips & Travels",
+      "whats_included": [
+        "Transportation",
+        "Professional tour guide",
+        "Admission fees to attractions",
+        "Refreshments"
+      ],
+      "whats_excluded": [
+        "Meals",
+        "Gratuities"
+      ],
+      "available_services": [
+        "Customized itineraries",
+        "Group and private tours"
+      ]
+    },
+    "price": 49.99,
+    "unit": "per person"
+  },
+  {
+    "category": "Trips & Travels",
+    "title": "Mountain Hiking",
+    "subtitle": "Thrilling hiking experience in the mountains",
+    "image": "https://img.freepik.com/premium-photo/group-asia-hiking-help-each-other-silhouette-mountains-with-sunlight_28668-202.jpg?w=2000",
+    "service_details": "Embark on an adventurous mountain hiking trip to explore breathtaking trails, enjoy stunning views, and connect with nature.",
+    "ratings": 4.8,
+    "service_includes": {
+      "category": "Trips & Travels",
+      "whats_included": [
+        "Experienced guide",
+        "Hiking equipment rental",
+        "Safety briefing",
+        "Trail snacks"
+      ],
+      "whats_excluded": [
+        "Transportation to the hiking location",
+        "Meals"
+      ],
+      "available_services": [
+        "Multi-day hiking expeditions",
+        "Customized difficulty levels"
+      ]
+    },
+    "price": 89.99,
+    "unit": "per person"
+  },
+  {
+    "category": "Trips & Travels",
+    "title": "Beach Vacation holiday",
+    "subtitle": "Relax and unwind on pristine sandy beaches",
+    "image": "https://familyvacationist.com/wp-content/uploads/2021/07/best-family-beach-vacations.jpg",
+    "service_details": "Indulge in a beach vacation and experience the ultimate relaxation, sunbathing, water activities, and stunning coastal views.",
+    "ratings": 4.7,
+    "service_includes": {
+      "category": "Trips & Travels",
+      "whats_included": [
+        "Accommodation at beachfront resort",
+        "Airport transfers",
+        "Daily breakfast",
+        "Access to resort facilities"
+      ],
+      "whats_excluded": [
+        "Flights",
+        "Meals (except breakfast)"
+      ],
+      "available_services": [
+        "Guided excursions",
+        "Water sports rentals"
+      ]
+    },
+    "price": 999.99,
+    "unit": "per couple"
+  },
+  {
+    "category": "Shifting",
+    "title": "House Shifting Services",
+    "subtitle": "Reliable shifting services for residential moves",
+    "image": "https://img.freepik.com/free-photo/couple-unpacking-their-belongings_23-2149312726.jpg?w=1060&t=st=1688320459~exp=1688321059~hmac=776d2917e7b2c9715f79a8003f9ea215c782ae0714f77e41284c4986e65ccec7",
+    "service_details": "We offer professional and efficient house shifting services to help you relocate your home with ease and convenience.",
+    "ratings": 4.5,
+    "service_includes": {
+      "category": "Shifting",
+      "whats_included": [
+        "Packing and unpacking of belongings",
+        "Loading and unloading",
+        "Transportation",
+        "Disassembly and reassembly of furniture"
+      ],
+      "whats_excluded": [
+        "Packing materials",
+        "Specialty item handling"
+      ],
+      "available_services": [
+        "Local and long-distance moves",
+        "Storage facilities"
+      ]
+    },
+    "price": 399.99,
+    "unit": "per move"
+  },
+  {
+    "category": "Shifting",
+    "title": "Commercial Shifting Service",
+    "subtitle": "Efficient shifting services for commercial moves",
+    "image": "https://img.freepik.com/free-photo/young-courier-his-colleague-unloading-cardboard-boxes-from-delivery-van_637285-2293.jpg?w=1060&t=st=1688320372~exp=1688320972~hmac=4ed5a59e8e05aad861986c704756e27b730d3d725eb83fe07f4b78962a703e71",
+    "service_details": "Our experienced team provides reliable commercial shifting services to ensure a smooth and organized transition for your business.",
+    "ratings": 4.7,
+    "service_includes": {
+      "category": "Shifting",
+      "whats_included": [
+        "Office furniture and equipment relocation",
+        "Packing and unpacking",
+        "Loading and unloading",
+        "Transportation and logistics"
+      ],
+      "whats_excluded": [
+        "Specialized equipment handling",
+        "IT infrastructure setup"
+      ],
+      "available_services": [
+        "Office setup planning",
+        "Furniture assembly and installation"
+      ]
+    },
+    "price": 799.99,
+    "unit": "per move"
+  },
+  {
+    "category": "Shifting",
+    "title": "Pickup & Truck Rental",
+    "subtitle": "Flexible pickup truck rental services",
+    "image": "https://img.freepik.com/free-photo/yellow-truck-parked-near-yellow-container-box_53876-64702.jpg?w=740&t=st=1688320399~exp=1688320999~hmac=635ab7b8447106994375acd8e1447108868ea887398f8144d4ef08cdd79398b6",
+    "service_details": "We offer convenient pickup truck rental services for various purposes, from moving small items to transporting goods.",
+    "ratings": 4.2,
+    "service_includes": {
+      "category": "Shifting",
+      "whats_included": [
+        "Pickup truck rental",
+        "Fuel for the rental duration",
+        "Basic insurance coverage"
+      ],
+      "whats_excluded": [
+        "Loading and unloading assistance",
+        "Additional insurance coverage"
+      ],
+      "available_services": [
+        "Driver service (additional charges apply)",
+        "Hourly and daily rental options"
+      ]
+    },
+    "price": 49.99,
+    "unit": "per ton a day"
+  },
+
+  {
+    "category": "Beauty & Salon",
+    "title": "Personal Beauty Care",
+    "subtitle": "Customized beauty treatments for a pampering experience",
+    "image": "https://media.istockphoto.com/id/921797424/photo/woman-in-mask-on-face-in-spa-beauty-salon.jpg?s=612x612&w=0&k=20&c=gGSPZOjIS2wcwQyOcjANOKpRVU0KR_iEDbRACnAoIXA=",
+    "service_details": "Indulge in personalized beauty care services tailored to your specific needs, including skincare, haircare, and relaxation treatments.",
+    "ratings": 4.6,
+    "service_includes": {
+      "category": "Beauty & Salon",
+      "whats_included": [
+        "Facial treatments",
+        "Hair styling and treatments",
+        "Manicure and pedicure",
+        "Relaxation therapies"
+      ],
+      "whats_excluded": [
+        "Specialty beauty products",
+        "Additional add-on services"
+      ],
+      "available_services": [
+        "Makeup application",
+        "Body massage"
+      ]
+    },
+    "price": 99.99,
+    "unit": "per session"
+  },
+  {
+    "category": "Beauty & Salon",
+    "title": "Beauty Combo Offer",
+    "subtitle": "A bundled package of popular beauty services",
+    "image": "https://img.freepik.com/free-photo/young-beautiful-woman-hairdresser-apron-using-smartphone-doing-selfie-with-scissors-being-confused-standing-green-wall_141793-64510.jpg?w=996&t=st=1688322650~exp=1688323250~hmac=5253b75827f5903eca16dde5c78f8989a004e056a6038e24e8646b4aae770b8f",
+    "service_details": "Avail yourself of a special beauty combo offer that includes a range of popular beauty services for a comprehensive and rejuvenating experience.",
+    "ratings": 4.8,
+    "service_includes": {
+      "category": "Beauty & Salon",
+      "whats_included": [
+        "Haircut and styling",
+        "Facial treatment",
+        "Manicure and pedicure",
+        "Eyebrow shaping"
+      ],
+      "whats_excluded": [
+        "Additional treatments not included in the combo",
+        "Specialty beauty products"
+      ],
+      "available_services": [
+        "Hair color application",
+        "Waxing services"
+      ]
+    },
+    "price": 149.99,
+    "unit": "per package"
+  },
+  {
+    "category": "Beauty & Salon",
+    "title": "Makeover for Women",
+    "subtitle": "Transformative makeover for a stunning new look",
+    "image": "https://img.freepik.com/free-photo/preparation-hairdresser-makeup-artist_329181-1935.jpg?w=1060&t=st=1688322684~exp=1688323284~hmac=0999026fe892e796b4553f85da6d5063ccc94fd9658195b431710c51d5c1bced",
+    "service_details": "Experience a complete makeover designed to enhance your beauty, including hair styling, makeup, and personalized styling advice.",
+    "ratings": 4.7,
+    "service_includes": {
+      "category": "Beauty & Salon",
+      "whats_included": [
+        "Haircut and styling",
+        "Professional makeup application",
+        "Personalized styling consultation",
+        "Photography session"
+      ],
+      "whats_excluded": [
+        "Additional beauty treatments",
+        "Outfit and accessories"
+      ],
+      "available_services": [
+        "Special occasion makeovers",
+        "Group makeovers"
+      ]
+    },
+    "price": 199.99,
+    "unit": "per session"
+  },
+
+  {
+    "category": "Car Care Services",
+    "title": "Car Wash & Polish",
+    "subtitle": "Thorough car cleaning and polishing services",
+    "image": "https://img.freepik.com/free-photo/man-cleaning-his-car-self-service_329181-11842.jpg?w=1060&t=st=1688323165~exp=1688323765~hmac=9dad55cbce071e6773b2c514e2700cb6c761d02e969f12a12921fc824609aa0d",
+    "service_details": "We provide professional car wash and polishing services to keep your vehicle clean, shiny, and protected.",
+    "ratings": 4.5,
+    "service_includes": {
+      "whats_included": [
+        "Exterior car wash",
+        "Interior vacuuming",
+        "Window cleaning",
+        "Wheel cleaning and tire shine"
+      ],
+      "whats_excluded": [
+        "Detailing services",
+        "Paint correction"
+      ],
+      "available_services": [
+        "Waxing and polishing",
+        "Undercarriage wash"
+      ]
+    },
+    "price": 29.99,
+    "unit": "per service"
+  },
+  {
+    "category": "Car Care Services",
+    "title": "Car Repair & Services",
+    "subtitle": "Comprehensive car repair and maintenance services",
+    "image": "https://img.freepik.com/free-photo/luxury-white-car-employee-blue-colored-uniform-works-automobile-salon_146671-16621.jpg?w=1060&t=st=1688323196~exp=1688323796~hmac=ba5d2d80c24d2e3fd7a2ee44d14fcd58ac7478cfdce5420e91c09d02f86866b3",
+    "service_details": "Our skilled technicians offer a wide range of car repair and maintenance services to keep your vehicle in optimal condition.",
+    "ratings": 4.7,
+    "service_includes": {
+      "whats_included": [
+        "Engine diagnostics and repairs",
+        "Brake system inspection and repairs",
+        "Oil change and filter replacement",
+        "Electrical system repairs"
+      ],
+      "whats_excluded": [
+        "Major part replacements",
+        "Bodywork repairs"
+      ],
+      "available_services": [
+        "Scheduled maintenance",
+        "Tire rotation and balancing"
+      ]
+    },
+    "price": 99.99,
+    "unit": "per service"
+  },
+  {
+    "category": "Car Care Services",
+    "title": "Car Painting & Decoration",
+    "subtitle": "Custom car painting and creative decoration services",
+    "image": "https://img.freepik.com/free-photo/man-spraying-powder-paint-car-door-side-view_23-2149714301.jpg?w=1060&t=st=1688323246~exp=1688323846~hmac=0fff5d246bef8b2d5a0ce1f5e303d087b4d7da5932203c1a889957ccedf3ca51",
+    "service_details": "Transform your car with our professional painting and creative decoration services, giving it a unique and personalized look.",
+    "ratings": 4.6,
+    "service_includes": {
+      "whats_included": [
+        "Full car painting",
+        "Color customization",
+        "Vinyl wraps and decals",
+        "Graphic design and airbrushing"
+      ],
+      "whats_excluded": [
+        "Body repair and dent removal",
+        "Mechanical modifications"
+      ],
+      "available_services": [
+        "Rim painting",
+        "Roof wrapping"
+      ]
+    },
+    "price": 299.99,
+    "unit": "per service"
+  },
+
+
+  {
+    "category": "Cleaning & Pest Control",
+    "title": "Office Cleaning Package",
+    "subtitle": "Professional cleaning services for offices and commercial spaces",
+    "image": "https://img.freepik.com/free-photo/full-shot-people-cleaning-office_23-2150454568.jpg?w=1060&t=st=1688323635~exp=1688324235~hmac=378092905dce291269b18cd8ca4a07fe593e134fd7da7ff217c4573ac7063cec",
+    "service_details": "Our specialized office cleaning package ensures a clean and hygienic work environment, enhancing productivity and employee well-being.",
+    "ratings": 4.5,
+    "service_includes": {
+      "category": "Cleaning & Pest Control",
+      "whats_included": [
+        "Dusting and wiping surfaces",
+        "Vacuuming and mopping floors",
+        "Trash removal",
+        "Restroom cleaning and sanitization"
+      ],
+      "whats_excluded": [
+        "Carpet cleaning",
+        "Window cleaning"
+      ],
+      "available_services": [
+        "Regular maintenance schedules",
+        "Deep cleaning services"
+      ]
+    },
+    "price": 199.99,
+    "unit": "per month"
+  },
+  {
+    "category": "Cleaning & Pest Control",
+    "title": "Eid Utshob Cleaning Package",
+    "subtitle": "Thorough cleaning package for special occasions",
+    "image": "https://img.freepik.com/free-photo/cleaning-lady-medical-mask-christmas_493343-30235.jpg?w=1060&t=st=1688323591~exp=1688324191~hmac=de3554b0f5f67e1b794274b3a0d13d4c25c07f69c10e58a6b79de4738df6f945",
+    "service_details": "Our Eid Utshob cleaning package provides comprehensive cleaning services to prepare your home for festive celebrations.",
+    "ratings": 4.7,
+    "service_includes": {
+      "category": "Cleaning & Pest Control",
+      "whats_included": [
+        "Dusting and wiping surfaces",
+        "Floor cleaning",
+        "Kitchen and bathroom cleaning",
+        "Window cleaning"
+      ],
+      "whats_excluded": [
+        "Pest control services",
+        "Deep stain removal"
+      ],
+      "available_services": [
+        "Furniture polishing",
+        "Air duct cleaning"
+      ]
+    },
+    "price": 149.99,
+    "unit": "per package"
+  },
+  {
+    "category": "Cleaning & Pest Control",
+    "title": "Home Cleaning",
+    "subtitle": "Professional cleaning services for residential properties",
+    "image": "https://img.freepik.com/free-photo/housewife-woking-home-lady-blue-shirt-woman-clean-floor_1157-45535.jpg?w=1060&t=st=1688323509~exp=1688324109~hmac=7f46462f281de4a2c95352c6622c9bbd5ce727049d4be91ffebdb284abfcac2e",
+    "service_details": "Experience a clean and tidy home with our professional home cleaning services, customized to meet your specific requirements.",
+    "ratings": 4.6,
+    "service_includes": {
+      "category": "Cleaning & Pest Control",
+      "whats_included": [
+        "Dusting and vacuuming",
+        "Kitchen and bathroom cleaning",
+        "Floor cleaning",
+        "Bedroom tidying"
+      ],
+      "whats_excluded": [
+        "Exterior cleaning",
+        "Garage cleaning"
+      ],
+      "available_services": [
+        "Deep cleaning",
+        "Move-in/move-out cleaning"
+      ]
+    },
+    "price": 99.99,
+    "unit": "per service"
+  },
+
+  {
+    "category": "Painting & Renovation",
+    "title": "Painting Services",
+    "subtitle": "Professional painting services for residential and commercial properties",
+    "image": "https://img.freepik.com/free-photo/room-interior-renovation-indoor-paint_53876-16065.jpg?w=1060&t=st=1688323896~exp=1688324496~hmac=0e68f28c676a85aaebeb851b748a9173e3d6e648a4d346d76e21a5edf7aaebeb",
+    "service_details": "Transform your space with our high-quality painting services, tailored to meet your aesthetic preferences and requirements.",
+    "ratings": 4.6,
+    "service_includes": {
+      "category": "Painting & Renovation",
+      "whats_included": [
+        "Interior painting",
+        "Exterior painting",
+        "Surface preparation",
+        "Color consultation"
+      ],
+      "whats_excluded": [
+        "Additional paintwork",
+        "Wallpaper installation"
+      ],
+      "available_services": [
+        "Texture painting",
+        "Accent wall painting"
+      ]
+    },
+    "price": 249.99,
+    "unit": "per room"
+  },
+  {
+    "category": "Painting & Renovation",
+    "title": "Carpentry Services",
+    "subtitle": "Professional carpentry services for various woodworking needs",
+    "image": "https://img.freepik.com/free-photo/carpenter-cutting-mdf-board-inside-workshop_23-2149451066.jpg?w=1060&t=st=1688323933~exp=1688324533~hmac=7e56ad3f9b3d2b990c566f7429864ffac6750eb929019c0eb971ce19de0eb189",
+    "service_details": "Enhance your space with our skilled carpentry services, including custom furniture, cabinetry, and woodworking installations.",
+    "ratings": 4.7,
+    "service_includes": {
+      "category": "Painting & Renovation",
+      "whats_included": [
+        "Custom furniture construction",
+        "Cabinet installation",
+        "Shelving and storage solutions",
+        "Woodworking repairs"
+      ],
+      "whats_excluded": [
+        "Major structural modifications",
+        "Specialty materials"
+      ],
+      "available_services": [
+        "Trim and molding installation",
+        "Door and window frame repair"
+      ]
+    },
+    "price": 349.99,
+    "unit": "per project"
+  },
+  {
+    "category": "Painting & Renovation",
+    "title": "Renovation, Construction & Tile Work",
+    "subtitle": "Complete renovation and construction services, including tile work",
+    "image": "https://img.freepik.com/free-photo/tiler-working-renovation-apartment_23-2149278610.jpg?w=1060&t=st=1688323973~exp=1688324573~hmac=a421e405d60b89c7e3e5f5151ea4e33ba1425e6ec0df3e8236d8aa4918870c43",
+    "service_details": "Transform your space with our comprehensive renovation and construction services, including skilled tile work for a stunning finish.",
+    "ratings": 4.8,
+    "service_includes": {
+      "category": "Painting & Renovation",
+      "whats_included": [
+        "Structural modifications",
+        "Demolition and debris removal",
+        "Tile installation and grouting",
+        "Plumbing and electrical work"
+      ],
+      "whats_excluded": [
+        "Specialty materials",
+        "Furniture or appliance installation"
+      ],
+      "available_services": [
+        "Bathroom renovation",
+        "Kitchen remodeling"
+      ]
+    },
+    "price": 999.99,
+    "unit": "per project"
+  },
+
+  {
+    "category": "Electric & Plumbing",
+    "title": "Plumbing & Sanitary Services",
+    "subtitle": "Professional plumbing and sanitary services for residential and commercial properties",
+    "image": "https://img.freepik.com/free-photo/asian-plumber-blue-overalls-clearing-blockage-drain_1098-17773.jpg?w=1060&t=st=1688324432~exp=1688325032~hmac=bea508f4bd8775eade29965eda260d313ce7fe7445f3cf1eab2e2e989f5dcb1f",
+    "service_details": "Our skilled plumbers provide reliable plumbing and sanitary services to ensure efficient water supply and drainage systems.",
+    "ratings": 4.5,
+    "service_includes": {
+      "category": "Electric & Plumbing",
+      "whats_included": [
+        "Pipe installation and repairs",
+        "Fixture installation (sink, toilet, shower, etc.)",
+        "Drain cleaning and unclogging",
+        "Leak detection and repair"
+      ],
+      "whats_excluded": [
+        "Septic tank cleaning",
+        "Water heater installation"
+      ],
+      "available_services": [
+        "Bathroom remodeling",
+        "Kitchen plumbing"
+      ]
+    },
+    "price": 149.99,
+    "unit": "per service"
+  },
+  {
+    "category": "Electric & Plumbing",
+    "title": "Fan / Light Services",
+    "subtitle": "Professional fan and light installation, repair, and maintenance services",
+    "image": "https://img.freepik.com/free-photo/medium-shot-people-wearing-safety-helmets_23-2149366668.jpg?w=1060&t=st=1688324480~exp=1688325080~hmac=59c6138f552938e03693d26cbfaa201ce493151d1cced88514b3397058e62471",
+    "service_details": "Our experienced electricians offer expert fan and light services, ensuring proper installation, repair, and maintenance for optimal functionality.",
+    "ratings": 4.7,
+    "service_includes": {
+      "category": "Electric & Plumbing",
+      "whats_included": [
+        "Ceiling fan installation and repair",
+        "Light fixture installation and replacement",
+        "Wiring and electrical connections",
+        "Fan speed and light switch adjustments"
+      ],
+      "whats_excluded": [
+        "Rewiring of entire premises",
+        "Specialty lighting installations"
+      ],
+      "available_services": [
+        "Fan and light maintenance",
+        "Dimmer switch installation"
+      ]
+    },
+    "price": 79.99,
+    "unit": "per service"
+  },
+
+  {
+    "category": "Car Rental",
+    "title": "Inside City Car Rental",
+    "subtitle": "Car rental services for within the city limits",
+    "image": "https://img.freepik.com/free-vector/carpool-concept-illustration_114360-9238.jpg?w=1060&t=st=1688324704~exp=1688325304~hmac=eefb8e469aa01a490d929e063a77ef0b9ab9ea440604f7f992afb477ba26ac9f",
+    "service_details": "Explore the city with our reliable car rental services, offering a wide range of vehicles for your transportation needs.",
+    "ratings": 4.5,
+    "service_includes": {
+      "category": "Car Rental",
+      "whats_included": [
+        "Well-maintained vehicles",
+        "Flexible rental durations",
+        "Comprehensive insurance coverage",
+        "24/7 roadside assistance"
+      ],
+      "whats_excluded": [
+        "Fuel costs",
+        "Toll charges"
+      ],
+      "available_services": [
+        "Airport pick-up and drop-off",
+        "Additional driver option"
+      ]
+    },
+    "price": 49.99,
+    "unit": "per day"
+  },
+  {
+    "category": "Car Rental",
+    "title": "Outside City Car Rental",
+    "subtitle": "Car rental services for travel outside the city",
+    "image": "https://img.freepik.com/free-photo/man-getting-car-medium-shot_23-2148999055.jpg?w=1060&t=st=1688324664~exp=1688325264~hmac=6055d25aebc32df56de8953a53677a0b56a8d741cfa87436b1077caaf695089c",
+    "service_details": "Embark on road trips and explore destinations beyond the city limits with our convenient outside city car rental services.",
+    "ratings": 4.7,
+    "service_includes": {
+      "category": "Car Rental",
+      "whats_included": [
+        "Wide selection of vehicles",
+        "Flexible rental durations",
+        "Comprehensive insurance coverage",
+        "24/7 roadside assistance"
+      ],
+      "whats_excluded": [
+        "Fuel costs",
+        "Toll charges"
+      ],
+      "available_services": [
+        "GPS navigation system",
+        "Child safety seat rental"
+      ]
+    },
+    "price": 69.99,
+    "unit": "per day"
+  },
+  {
+    "category": "Men's Care & Salon",
+    "title": "Salon Services for Men",
+    "subtitle": "Professional grooming and salon services tailored for men",
+    "image": "https://img.freepik.com/free-photo/back-view-smiley-barber-using-hairdryer_23-2148298282.jpg?w=996&t=st=1688325445~exp=1688326045~hmac=d8886ae5d3b4ef693338e188585649fc085b69ed5e74efd8c5dcfc661b76a345",
+    "service_details": "Experience top-notch grooming and salon services exclusively designed for men, ensuring a stylish and well-maintained appearance.",
+    "ratings": 4.6,
+    "service_includes": {
+      "category": "Men's Care & Salon",
+      "whats_included": [
+        "Haircut and styling",
+        "Beard grooming and shaping",
+        "Facial treatments",
+        "Waxing and hair removal"
+      ],
+      "whats_excluded": [
+        "Hair coloring",
+        "Permanent straightening"
+      ],
+      "available_services": [
+        "Shaving and trimming",
+        "Scalp treatment"
+      ]
+    },
+    "price": 49.99,
+    "unit": "per service"
+  },
+  {
+    "category": "Men's Care & Salon",
+    "title": "Pedicure & Manicure for Men",
+    "subtitle": "Professional nail care services for men",
+    "image": "https://img.freepik.com/free-photo/process-professional-pedicure-with-master-blue-gloves-applying-light-pink-gel-polish_343596-1641.jpg?w=1060&t=st=1688325415~exp=1688326015~hmac=b7fa306405a025fa29439626f39dfbe1c7cf1bfd55ebdb5459eaa90ee25255ef",
+    "service_details": "Indulge in relaxation and nail care with our expert pedicure and manicure services tailored specifically for men's hands and feet.",
+    "ratings": 4.7,
+    "service_includes": {
+      "category": "Men's Care & Salon",
+      "whats_included": [
+        "Nail trimming and shaping",
+        "Cuticle care",
+        "Hand and foot massage",
+        "Exfoliation and moisturizing"
+      ],
+      "whats_excluded": [
+        "Nail polish application",
+        "Nail art"
+      ],
+      "available_services": [
+        "Callus removal",
+        "Buffing and shine"
+      ]
+    },
+    "price": 29.99,
+    "unit": "per service"
+  },
+  {
+    "category": "Men's Care & Salon",
+    "title": "Body Massage for Men",
+    "subtitle": "Relaxing and therapeutic body massage services for men",
+    "image": "https://img.freepik.com/free-photo/masseur-doing-massage-backbone-man-body-spa-salon-beauty-treatment-concept_186202-4757.jpg?w=996&t=st=1688324854~exp=1688325454~hmac=0fe9af2f5b1bcdcb3ca3799a805e7888d4194a6db5d0f0d1bb0200d7e5481b8c",
+    "service_details": "Unwind and rejuvenate with our invigorating body massage services designed to relieve stress, promote relaxation, and enhance overall well-being.",
+    "ratings": 4.8,
+    "service_includes": {
+      "category": "Men's Care & Salon",
+      "whats_included": [
+        "Full body massage",
+        "Deep tissue massage",
+        "Aromatherapy",
+        "Hot stone therapy"
+      ],
+      "whats_excluded": [
+        "Couple's massage",
+        "Specialty treatments"
+      ],
+      "available_services": [
+        "Head and scalp massage",
+        "Foot reflexology"
+      ]
+    },
+    "price": 79.99,
+    "unit": "per session"
+  }
+
+  
+]
