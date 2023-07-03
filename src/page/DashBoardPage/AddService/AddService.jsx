@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const AddService = () => {
   const {
@@ -7,9 +8,60 @@ const AddService = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    const {category,image,incluide1,incluide2,incluide3,price,ratings,service_details,subtitle,title,unit,excluide1,excluide2,excluide3,available1,available2,available3}=data;
-    const newdata={category,image,price:parseFloat(price),ratings:parseFloat(ratings),service_details,subtitle,title,unit,"service_includes":{"whats_included":[incluide1,incluide2,incluide3],"whats_excluded":[excluide1,excluide2,excluide3],"available_services":[available1,available2,available3]}}
+    const {
+      category,
+      image,
+      incluide1,
+      incluide2,
+      incluide3,
+      price,
+      ratings,
+      service_details,
+      subtitle,
+      title,
+      unit,
+      excluide1,
+      excluide2,
+      excluide3,
+      available1,
+      available2,
+      available3,
+    } = data;
+    const newdata = {
+      category,
+      image,
+      price: parseFloat(price),
+      service_details,
+      subtitle,
+      title,
+      unit,
+      service_includes: {
+        whats_included: [incluide1, incluide2, incluide3],
+        whats_excluded: [excluide1, excluide2, excluide3],
+        available_services: [available1, available2, available3],
+      },
+    };
     console.log(newdata);
+    fetch("http://localhost:5000/service/add", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newdata),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          console.log(data);
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Succesfully Service add',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+      });
   };
   //   service_details,
   //   service_includes,
@@ -60,24 +112,24 @@ const AddService = () => {
                   className="p-2 my-3 rounded-lg bg-slate-100"
                   {...register("category")}
                 >
-                  <option value="female">female</option>
-                  <option value="male">male</option>
-                  <option value="other">other</option>
+                  <option value="AC Repair Services">AC Repair Services</option>
+                  <option value="Appliance Repair">Appliance Repair</option>
+                  <option value="Trips & Travels">Trips & Travels</option>
+                  <option value="Shifting">Shifting</option>
+                  <option value="Beauty & Salon">Beauty & Salon</option>
+                  <option value="Car Care Services">Car Care Services</option>
+                  <option value="Cleaning & Pest Control">
+                    Cleaning & Pest Control
+                  </option>
+                  <option value="Painting & Renovation">
+                    Painting & Renovation
+                  </option>
+                  <option value="Electric & Plumbing">
+                    Electric & Plumbing
+                  </option>
+                  <option value="Car Rental">Car Rental</option>
+                  <option value="Men's Care & Salon">Men's Care & Salon</option>
                 </select>
-              </div>
-              <div className="form-control w-full">
-                <label className="label">
-                  <span className="label-text">ratings</span>
-                </label>
-                <input
-                  className="p-2 rounded-lg bg-slate-100"
-                  {...register("ratings", { required: true })}
-                />
-                {errors.ratings?.type === "required" && (
-                  <p role="alert" className="text-red-500 label-text-alt">
-                    ratings is required *
-                  </p>
-                )}
               </div>
               <div className="form-control w-full">
                 <label className="label">
@@ -109,7 +161,6 @@ const AddService = () => {
               </div>
             </div>
 
-            
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Service image</span>
@@ -145,20 +196,19 @@ const AddService = () => {
                 <span className="label-text">Whats Included</span>
               </label>
               <div className="flex gap-5">
-              <input
-                className="p-2 rounded-lg bg-slate-100"
-                {...register("incluide1", { required: true })}
-              />
-              <input
-                className="p-2 rounded-lg bg-slate-100"
-                {...register("incluide2", { required: true })}
-              />
-              <input
-                className="p-2 rounded-lg bg-slate-100"
-                {...register("incluide3", { required: true })}
-              />
+                <input
+                  className="p-2 rounded-lg bg-slate-100"
+                  {...register("incluide1", { required: true })}
+                />
+                <input
+                  className="p-2 rounded-lg bg-slate-100"
+                  {...register("incluide2", { required: true })}
+                />
+                <input
+                  className="p-2 rounded-lg bg-slate-100"
+                  {...register("incluide3", { required: true })}
+                />
               </div>
-              
             </div>
 
             <div className="form-control">
@@ -166,20 +216,19 @@ const AddService = () => {
                 <span className="label-text">whats excluded</span>
               </label>
               <div className="flex gap-5">
-              <input
-                className="p-2 rounded-lg bg-slate-100"
-                {...register("excluide1", { required: true })}
-              />
-              <input
-                className="p-2 rounded-lg bg-slate-100"
-                {...register("excluide2", { required: true })}
-              />
-              <input
-                className="p-2 rounded-lg bg-slate-100"
-                {...register("excluide3", { required: true })}
-              />
+                <input
+                  className="p-2 rounded-lg bg-slate-100"
+                  {...register("excluide1", { required: true })}
+                />
+                <input
+                  className="p-2 rounded-lg bg-slate-100"
+                  {...register("excluide2", { required: true })}
+                />
+                <input
+                  className="p-2 rounded-lg bg-slate-100"
+                  {...register("excluide3", { required: true })}
+                />
               </div>
-              
             </div>
 
             <div className="form-control">
@@ -187,22 +236,21 @@ const AddService = () => {
                 <span className="label-text">available services</span>
               </label>
               <div className="flex gap-5">
-              <input
-                className="p-2 rounded-lg bg-slate-100"
-                {...register("available1", { required: true })}
-              />
-              <input
-                className="p-2 rounded-lg bg-slate-100"
-                {...register("available2", { required: true })}
-              />
-              <input
-                className="p-2 rounded-lg bg-slate-100"
-                {...register("available3", { required: true })}
-              />
+                <input
+                  className="p-2 rounded-lg bg-slate-100"
+                  {...register("available1", { required: true })}
+                />
+                <input
+                  className="p-2 rounded-lg bg-slate-100"
+                  {...register("available2", { required: true })}
+                />
+                <input
+                  className="p-2 rounded-lg bg-slate-100"
+                  {...register("available3", { required: true })}
+                />
               </div>
-              
             </div>
-            
+
             <div className="form-control mt-2">
               <button
                 className="btn font-bold normal-case bg-slate-300"

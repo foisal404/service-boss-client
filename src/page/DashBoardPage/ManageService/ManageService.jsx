@@ -1,8 +1,29 @@
+import Swal from "sweetalert2";
 import useServices from "../../../hooks/useServices";
 
 const ManageService = () => {
 
   const [services, refetch] = useServices();
+  const handleDelete=(id)=>{
+    console.log(id);
+    fetch(`http://localhost:5000/service/${id}`,{
+      method:"DELETE"
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      if(data.deletedCount> 0){
+        console.log(data);
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Succesfully DELETE',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        refetch();
+      }
+    })
+  }
   return (
     <section className="p-5">
       <div>
@@ -10,7 +31,7 @@ const ManageService = () => {
       </div>
       <div className="grid grid-cols-1 gap-5 p-5">
         {services.toReversed().map((service) => (
-          <div className="" key={service._id}>
+          <div className="" key={service?._id}>
             <div className="hero bg-base-200 rounded-lg">
               <div className="hero-content flex-col lg:flex-row">
                 <img
@@ -27,9 +48,8 @@ const ManageService = () => {
                     </p>
                   </div>
                   <div >
-                    <button className="btn bg-green-400 my-1 w-full">Update</button>
-                    <button className="btn bg-red-400 normal-case my-1 w-full">Delete</button>
-                    <button className="btn bg-orange-400 my-1 w-full">Hide</button>
+                    <button className="btn bg-green-400 normal-case my-1 w-full">Update</button>
+                    <button onClick={()=>handleDelete(service?._id)} className="btn bg-red-400 normal-case my-1 w-full">Delete</button>
                   </div>
                 </div>
               </div>
