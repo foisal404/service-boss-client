@@ -19,19 +19,23 @@ const NavHead = () => {
   const navItems = (
     <>
       <li>
+        <Link to="/" className="my-auto">
+          Home
+        </Link>
+      </li>
+      <li>
         <Link to="/allservies" className="my-auto">
           All Services
         </Link>
       </li>
       {user ? (
         <>
-         <li>
-              <Link to="/dashboard" className="my-auto">
-                Dashboard
-              </Link>
-            </li>
+          <li>
+            <Link to="/dashboard" className="my-auto">
+              Dashboard
+            </Link>
+          </li>
           <span className="mx-3 my-0">
-           
             <label
               tabIndex={0}
               className="btn   btn-circle avatar tooltip  tooltip-bottom"

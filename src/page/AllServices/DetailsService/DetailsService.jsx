@@ -1,5 +1,4 @@
 import { useLoaderData } from "react-router-dom";
-import { FaBookmark, FaStar } from "react-icons/fa";
 import saftyImg from '../../../assets/image/icon/badge.png'
 import ServiceIncludes from "./ServiceIncludes";
 
@@ -24,15 +23,12 @@ const DetailsService = () => {
           
           <div>
             <img src={image} className="max-w-sm rounded-lg shadow-2xl" />
-            <button className="btn w-full my-5 bg-green-500 text-white font-bold normal-case">Proceed To Checkout -{'>'}</button>
+            <button className="btn w-full my-5 bg-green-500 text-white font-bold normal-case">Proceed To Cart -{'>'}</button>
           </div>
           
           <div>
             <div className="flex">
               <h1 className="text-5xl font-bold">{title}</h1>
-              <button className="btn mx-10 text-xl">
-                <FaBookmark /> Add to Cart
-              </button>
             </div>
             <h2 className="text-4xl font-bold">{subtitle}</h2>
             <img src={saftyImg} className="h-10 my-3" alt="" />
