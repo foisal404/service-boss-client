@@ -4,14 +4,15 @@ import ServiceIncludes from "./ServiceIncludes";
 import useRole from "../../../hooks/useRole";
 import { useContext } from "react";
 import { authContext } from "../../../Auth/AuthProvider";
-import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 import useReview from "../../../hooks/useReview";
+import Rating from "react-rating";
+import { FaRegStar, FaStar } from "react-icons/fa";
 
 const DetailsService = () => {
   const [role] = useRole();
   const { user, loading } = useContext(authContext);
-  console.log(role);
+  // console.log(role);
   const loader = useLoaderData();
   const {
     _id,
@@ -38,6 +39,7 @@ const DetailsService = () => {
       rating: parseFloat(rating),
     };
     console.log(data);
+    //post comment data
     fetch("http://localhost:5000/comment/add", {
       method: "POST",
       headers: {
@@ -57,7 +59,11 @@ const DetailsService = () => {
       });
   };
   const [comments, refetch] = useReview(_id);
-  console.log(comments);
+  // console.log(comments);
+  const handleCart = () => {
+    const data = { serviceID: _id, useremail: user?.email, status: "unpaid" };
+    console.log(data);
+  };
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -65,8 +71,11 @@ const DetailsService = () => {
           <div>
             <img src={image} className="max-w-sm rounded-lg shadow-2xl" />
             <button
-              className={`btn w-full my-5 bg-green-500 text-white font-bold normal-case ${
-                role?.role === "user" ? "" : "btn-disabled bg-gray-600"
+              onClick={handleCart}
+              className={`btn w-full my-5  text-white font-bold normal-case ${
+                user && role?.role === "user"
+                  ? "bg-green-500"
+                  : "btn-disabled bg-gray-600"
               }`}
             >
               Proceed To Cart -{">"}
@@ -98,7 +107,7 @@ const DetailsService = () => {
               >
                 {/* from ------------------------------------------------------- */}
                 <form
-                  className="card-body items-center flex-row "
+                  className="card-body items-end flex-row "
                   onSubmit={handleForm}
                 >
                   <div className="form-control">
@@ -124,7 +133,7 @@ const DetailsService = () => {
                   </div>
                   <div className="form-control mt-2">
                     <button
-                      className="btn font-bold normal-case bg-slate-300"
+                      className="btn font-bold normal-case rounded-lg bg-slate-300"
                       type="submit"
                     >
                       submit
@@ -132,20 +141,45 @@ const DetailsService = () => {
                   </div>
                 </form>
               </div>
-              {/* Review  */}
-              <h2 className="font-bold text-2xl">Reviews <div className="badge badge-secondary">+{comments.length}</div></h2>
+              {/* Review  -------------------------------------------------------------*/}
+              <h2 className="font-bold text-2xl">
+                Reviews{" "}
+                <div className="badge badge-secondary">+{comments.length}</div>
+              </h2>
               <div>
                 {comments.map((com, idx) => (
-                  <div className="flex p-2 my-5 gap-5 bg-slate-200 rounded-lg" key={idx}>
+                  <div
+                    className="flex p-2 my-5 gap-5 bg-slate-200 rounded-lg"
+                    key={idx}
+                  >
                     <img
                       src={com?.userDP}
                       className="h-20 w-20 rounded-full"
                       alt=""
                     />
                     <div>
-                      <p className="text-lg font-semibold">{com?.userName}</p>
-                      <p>{com?.rating}</p>
-                      <p>{com?.comment}</p>
+                      <p className="text-xl text-slate-800 font-semibold">
+                        {com?.userName}
+                      </p>
+                      <span className="flex gap-3 items-center">
+                        <p className="bg-green-400 p-1 my-2 rounded-xl text-sm">
+                          <FaStar className="inline me-2" />
+                          {com?.rating} out of 5
+                        </p>
+                        <p>
+                          <Rating
+                            placeholderRating={`${com?.rating}`}
+                            emptySymbol={
+                              <FaRegStar className="text-yellow-500" />
+                            }
+                            placeholderSymbol={
+                              <FaStar className="text-yellow-500" />
+                            }
+                            fullSymbol={<FaStar className="text-yellow-500" />}
+                          />
+                        </p>
+                      </span>
+                      <p className="text-sm text-slate-600">{com?.comment}</p>
                     </div>
                   </div>
                 ))}

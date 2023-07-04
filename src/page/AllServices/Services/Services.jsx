@@ -7,7 +7,7 @@ import { motion, useScroll } from "framer-motion";
 const Services = () => {
   const { scrollYProgress } = useScroll();
   const [services] = useServices();
-  console.log(services);
+  // console.log(services);
   let acSercvice = services.filter(
     (ser) => ser.category === "AC Repair Services"
   );
