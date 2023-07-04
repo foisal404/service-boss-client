@@ -39,10 +39,10 @@ const NavHead = () => {
             <label
               tabIndex={0}
               className="btn   btn-circle avatar tooltip  tooltip-bottom"
-              data-tip={`${user.displayName}`}
+              data-tip={`${user?.displayName}`}
             >
               <div className="w-10  rounded-full mx-auto mt-1 ">
-                <img src={`${user.photoURL}`} />
+                <img src={`${user?.photoURL}`} />
               </div>
             </label>
           </span>

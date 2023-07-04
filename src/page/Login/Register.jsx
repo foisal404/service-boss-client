@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import useaddUser from "../../hooks/addUser";
 const Register = () => {
   const [error, setErrror] = useState(false);
-  const { updateUserProfile, singUp, googleLogin } = useContext(authContext);
+  const { updateUserProfile, singUp, googleLogin,setLoading } = useContext(authContext);
   const {
     register,
     handleSubmit,
@@ -38,6 +38,7 @@ const Register = () => {
               useaddUser(data);
             })
             .catch((error) => {
+              setLoading(false)
               console.error(error.message);
               toast(`${error.message.slice(17)}`, { theme: "dark" });
             });

@@ -11,6 +11,7 @@ import PrivateRoute from "../PrivateRoute";
 import AllUser from "../../page/DashBoardPage/Alluser/AllUser";
 import ManageService from "../../page/DashBoardPage/ManageService/ManageService";
 import AddService from "../../page/DashBoardPage/AddService/AddService";
+import UpdateService from "../../page/DashBoardPage/UpdateService/UpdateService";
 
 const router = createBrowserRouter([
     {
@@ -55,6 +56,12 @@ const router = createBrowserRouter([
         {
           path:'dashboard/addservie',
           element:<AddService/>
+        },
+        {
+          path:'/dashboard/dashboard/manageservies/dashboard/:id',
+          element:<UpdateService/>,
+          loader:({params})=> fetch(`http://localhost:5000/service/${params.id}`)
+
         }
       ]
       

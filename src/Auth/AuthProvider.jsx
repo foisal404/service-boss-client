@@ -49,7 +49,7 @@ const AuthProvider = ({children}) => {
         updateUserProfile,
         logOut,
         SignIn,
-        user
+        user,setLoading
     }
     return (
         <authContext.Provider value={docs}>

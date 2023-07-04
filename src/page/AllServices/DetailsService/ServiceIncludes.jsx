@@ -1,6 +1,6 @@
 
 const ServiceIncludes = ({data}) => {
-    console.log(data);
+    // console.log(data);
     return (
         <div>
             

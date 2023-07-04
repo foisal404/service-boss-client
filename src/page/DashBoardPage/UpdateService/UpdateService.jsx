@@ -1,73 +1,55 @@
 import { useForm } from "react-hook-form";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const AddService = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => {
+
+const UpdateService = () => {
+    const loader=useLoaderData()
+    // console.log(loader);
     const {
-      category,
-      image,
-      incluide1,
-      incluide2,
-      incluide3,
-      price,
-      service_details,
-      subtitle,
-      title,
-      unit,
-      excluide1,
-      excluide2,
-      excluide3,
-      available1,
-      available2,
-      available3,
-    } = data;
-    const newdata = {
-      category,
-      image,
-      price: parseFloat(price),
-      service_details,
-      subtitle,
-      title,
-      unit,
-      service_includes: {
-        whats_included: [incluide1, incluide2, incluide3],
-        whats_excluded: [excluide1, excluide2, excluide3],
-        available_services: [available1, available2, available3],
-      },
-    };
-    console.log(newdata);
-    fetch("http://localhost:5000/service/add", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newdata),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.insertedId) {
-          console.log(data);
-          Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Succesfully Service add',
-            showConfirmButton: false,
-            timer: 1500
-          })
-        }
-      });
-  };
-  //   service_details,
-  //   service_includes,
-  return (
-    <section className="w-full px-20 p-10">
+        _id,
+        category,
+        image,
+        price,
+        service_details,
+        subtitle,
+        title,
+        unit,
+        service_includes} =loader;
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+      } = useForm();
+      const onSubmit = (data) => {
+        
+            console.log(data);
+            fetch(`http://localhost:5000/service/update/${_id}`,{
+                method:"PATCH",
+                headers:{
+                    "content-type":"application/json"
+                },
+                body:JSON.stringify(data)
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                if(data.modifiedCount> 0){
+
+                    console.log(data);
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Succesfully Service updated',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                }
+            })
+      }
+    return (
+        <section className="w-full px-20 p-10">
       <div>
-        <h2 className="text-center text-4xl">Add new Service</h2>
+        <h2 className="text-center text-4xl">Update Service</h2>
       </div>
       <div className="hero-content w-full">
         <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
@@ -78,7 +60,7 @@ const AddService = () => {
                   <span className="label-text">title</span>
                 </label>
                 <input
-                  className="p-2 rounded-lg  bg-slate-100"
+                  className="p-2 rounded-lg  bg-slate-100" defaultValue={title}
                   {...register("title", { required: true })}
                 />
                 {errors.title?.type === "required" && (
@@ -92,7 +74,7 @@ const AddService = () => {
                   <span className="label-text">subtitle</span>
                 </label>
                 <input
-                  className="p-2 rounded-lg bg-slate-100"
+                  className="p-2 rounded-lg bg-slate-100" defaultValue={subtitle}
                   {...register("subtitle", { required: true })}
                 />
                 {errors.subtitle?.type === "required" && (
@@ -109,7 +91,7 @@ const AddService = () => {
                 </label>
                 <select
                   className="p-2 my-3 rounded-lg bg-slate-100"
-                  {...register("category")}
+                  {...register("category")} defaultValue={category}
                 >
                   <option value="AC Repair Services">AC Repair Services</option>
                   <option value="Appliance Repair">Appliance Repair</option>
@@ -136,7 +118,7 @@ const AddService = () => {
                 </label>
                 <input
                   className="p-2 rounded-lg bg-slate-100"
-                  {...register("price", { required: true })}
+                  {...register("price", { required: true })} defaultValue={price}
                 />
                 {errors.price?.type === "required" && (
                   <p role="alert" className="text-red-500 label-text-alt">
@@ -150,7 +132,7 @@ const AddService = () => {
                 </label>
                 <input
                   className="p-2 rounded-lg bg-slate-100"
-                  {...register("unit", { required: true })}
+                  {...register("unit", { required: true })} defaultValue={unit}
                 />
                 {errors.unit?.type === "required" && (
                   <p role="alert" className="text-red-500 label-text-alt">
@@ -166,7 +148,7 @@ const AddService = () => {
               </label>
               <input
                 className="p-2 rounded-lg bg-slate-100"
-                {...register("image", { required: true })}
+                {...register("image", { required: true })} defaultValue={image}
               />
               {errors.image?.type === "required" && (
                 <p role="alert" className="text-red-500 label-text-alt">
@@ -181,7 +163,7 @@ const AddService = () => {
               </label>
               <input
                 className="p-2 rounded-lg bg-slate-100"
-                {...register("service_details", { required: true })}
+                {...register("service_details", { required: true })} defaultValue={service_details}
               />
               {errors.service_details?.type === "required" && (
                 <p role="alert" className="text-red-500 label-text-alt">
@@ -197,15 +179,15 @@ const AddService = () => {
               <div className="flex gap-5">
                 <input
                   className="p-2 rounded-lg bg-slate-100"
-                  {...register("incluide1", { required: true })}
+                  {...register("incluide1", { required: true })}  defaultValue={service_includes?.["whats_included"][0]}
                 />
                 <input
                   className="p-2 rounded-lg bg-slate-100"
-                  {...register("incluide2", { required: true })}
+                  {...register("incluide2", { required: true })} defaultValue={service_includes?.["whats_included"][1]}
                 />
                 <input
                   className="p-2 rounded-lg bg-slate-100"
-                  {...register("incluide3", { required: true })}
+                  {...register("incluide3", { required: true })} defaultValue={service_includes?.["whats_included"][2]}
                 />
               </div>
             </div>
@@ -217,15 +199,15 @@ const AddService = () => {
               <div className="flex gap-5">
                 <input
                   className="p-2 rounded-lg bg-slate-100"
-                  {...register("excluide1", { required: true })}
+                  {...register("excluide1", { required: true })} defaultValue={service_includes?.["whats_excluded"][0]}
                 />
                 <input
                   className="p-2 rounded-lg bg-slate-100"
-                  {...register("excluide2", { required: true })}
+                  {...register("excluide2", { required: true })} defaultValue={service_includes?.["whats_excluded"][1]}
                 />
                 <input
                   className="p-2 rounded-lg bg-slate-100"
-                  {...register("excluide3", { required: true })}
+                  {...register("excluide3", { required: true })}  defaultValue={service_includes?.["whats_excluded"][2]}
                 />
               </div>
             </div>
@@ -237,15 +219,15 @@ const AddService = () => {
               <div className="flex gap-5">
                 <input
                   className="p-2 rounded-lg bg-slate-100"
-                  {...register("available1", { required: true })}
+                  {...register("available1", { required: true })} defaultValue={service_includes?.["available_services"][0]}
                 />
                 <input
                   className="p-2 rounded-lg bg-slate-100"
-                  {...register("available2", { required: true })}
+                  {...register("available2", { required: true })} defaultValue={service_includes?.["available_services"][1]}
                 />
                 <input
                   className="p-2 rounded-lg bg-slate-100"
-                  {...register("available3", { required: true })}
+                  {...register("available3", { required: true })} defaultValue={service_includes?.["available_services"][2]}
                 />
               </div>
             </div>
@@ -255,14 +237,14 @@ const AddService = () => {
                 className="btn font-bold normal-case bg-slate-300"
                 type="submit"
               >
-                Add product
+                Update product
               </button>
             </div>
           </form>
         </div>
       </div>
     </section>
-  );
+    );
 };
 
-export default AddService;
+export default UpdateService;
