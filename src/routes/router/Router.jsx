@@ -81,12 +81,12 @@ const router = createBrowserRouter([
         {
           path:'usercart/payment/:id',
           element:<Payment/>,
-          loader:({params}) => fetch(`http://localhost:5000/cart?id=${params?.id}`)
+          loader:({params}) => fetch(`https://service-boss-server.vercel.app/cart?id=${params?.id}`)
         },
         {
           path:'manageservies/:id',
           element:<UpdateService/>,
-          loader:({params})=> fetch(`http://localhost:5000/service/${params.id}`)
+          loader:({params})=> fetch(`https://service-boss-server.vercel.app/service/${params.id}`)
 
         }
       ]

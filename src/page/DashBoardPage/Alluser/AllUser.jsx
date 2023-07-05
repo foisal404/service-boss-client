@@ -7,7 +7,7 @@ const AllUser = () => {
 //   console.log(users);
   const handleMakeAdmin=(email)=>{
     console.log(email);
-    fetch(`http://localhost:5000/user/admin/${email}`,{
+    fetch(`https://service-boss-server.vercel.app/user/admin/${email}`,{
         method:"PATCH"
     })
     .then(res=>res.json())
