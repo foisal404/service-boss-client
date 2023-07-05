@@ -1,5 +1,7 @@
 
 import Swal from "sweetalert2";
+
+
 const useaddUser = (data) => {
   fetch("https://service-boss-server.vercel.app/user", {
     method: "POST",
@@ -14,7 +16,7 @@ const useaddUser = (data) => {
       Swal.fire({
         position: 'top-end',
         icon: 'success',
-        title: 'Succesfully Register',
+        title: 'Succesfully Enter',
         showConfirmButton: false,
         timer: 1500
       })

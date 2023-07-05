@@ -18,7 +18,8 @@ const Profile = () => {
           <div className="hero-content w-full flex-col lg:flex-row-reverse">
             <img
               src={profilUser?.userphoto}
-              className="max-w-sm rounded-lg shadow-2xl"
+              className="max-w-sm rounded-lg shadow-2xl max-h-96"
+              alt={`${profilUser?.username} Photo`}
             />
             <div className="w-1/2">
               <h1 className="text-4xl text-slate-600 font-bold">{profilUser?.username} <span className="badge badge-accent text-white">{profilUser?.role}</span></h1>

@@ -24,7 +24,7 @@ const Mypayment = () => {
           <tr>
             <th>#</th>
             <th>Details</th>
-            <th>Transiction ID</th>
+            <th>Transaction ID</th>
             <th>Payment</th>
           </tr>
         </thead>

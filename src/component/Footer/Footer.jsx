@@ -8,7 +8,7 @@ const Footer = () => {
           <p>
             SERVICE HERO
             <br />
-            Providing reliable tech 
+            Providing reliable Service
           </p>
         </div>
         <div className="bg-[#111828] h-full w-full p-10">

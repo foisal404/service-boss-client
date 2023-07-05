@@ -59,7 +59,7 @@ const router = createBrowserRouter([
           element:<AllUser/>
         },
         {
-          path:'transictions',
+          path:'transactions',
           element:<Transiction/>
         },
         {

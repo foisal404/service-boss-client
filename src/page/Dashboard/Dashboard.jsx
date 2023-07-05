@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 import useRole from "../../hooks/useRole";
 import useUserCart from "../../hooks/useUserCart";
 import { CgProfile } from "react-icons/cg";
-import { FaHome, FaLuggageCart, FaMoneyCheckAlt, FaRegWindowRestore, FaServer, FaServicestack, FaUsers, FaWallet } from "react-icons/fa";
+import { FaHome, FaHouseDamage, FaLuggageCart, FaMoneyCheckAlt, FaRegWindowRestore, FaServer, FaServicestack, FaUsers, FaWallet } from "react-icons/fa";
 
 const Dashboard = () => {
   const [role]=useRole();
@@ -50,7 +50,7 @@ const Dashboard = () => {
               </li>
               
               <li>
-                <Link to="transictions" className="my-auto">
+                <Link to="transactions" className="my-auto">
                   <FaMoneyCheckAlt/>Transictions
                 </Link>
               </li>
@@ -74,7 +74,7 @@ const Dashboard = () => {
             <div className="divider"></div>
             <li>
               <Link to="/" className="my-auto">
-                <FaHome/> Home
+              <FaHouseDamage/> Home
               </Link>
             </li>
             <li>

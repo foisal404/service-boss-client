@@ -59,7 +59,7 @@ const Login = () => {
       <div className="hero-content flex-col lg:gap-32 lg:flex-row">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold py-10">Login now!</h1>
-          <img src={banner} alt="" />
+          <img src={banner} alt="banner" />
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form className="card-body pb-2" onSubmit={handleSubmit(onSubmit)}>
@@ -67,14 +67,14 @@ const Login = () => {
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
-              <input defaultValue="email" className="p-2 rounded-lg bg-slate-100" {...register("email", { required: true })} />
+              <input placeholder="Email" className="p-2 rounded-lg bg-slate-100" {...register("email", { required: true })} />
               {errors.email?.type === "required" && (<p role="alert" className="text-red-500 label-text-alt">email is required *</p>)}
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
-              <input type="password" className="p-2 rounded-lg bg-slate-100" {...register("password", { required: true ,minLength :6})} />
+              <input type="password" placeholder="Password" className="p-2 rounded-lg bg-slate-100" {...register("password", { required: true ,minLength :6})} />
               {errors.password?.type === "required" && (<p role="alert" className="text-red-500 label-text-alt">password is required *</p>)}
               {errors.password?.type === "minLength" && (<p role="alert" className="text-red-500 label-text-alt">password length must be 6 *</p>)}
               <label className="label">

@@ -11,7 +11,7 @@ const Payment = () => {
     console.log(data);
 
     if (!data || data.length === 0 || !data[0].price) {
-        return <div>Loading...</div>;
+        return <div><progress className="progress w-56"></progress></div>;
     }
 
     return (

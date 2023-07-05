@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import useServices from "../../../hooks/useServices";
 import { Link } from "react-router-dom";
 import TitleSection from "../../../component/Shared/TitleSection";
+import { FaEdit, FaTrash } from 'react-icons/fa';
 
 const ManageService = () => {
 
@@ -51,8 +52,9 @@ const ManageService = () => {
                     </p>
                   </div>
                   <div >
-                    <button className="btn bg-green-400 normal-case my-1 w-full"><Link to={`${service?._id}`}>Update</Link></button>
-                    <button onClick={()=>handleDelete(service?._id)} className="btn bg-red-400 normal-case my-1 w-full">Delete</button>
+                    <button className="btn bg-green-500 normal-case my-1 w-full text-white"><FaEdit/><Link to={`${service?._id}`}>  Edit</Link></button>
+                    <button onClick={()=>handleDelete(service?._id)} className="btn bg-red-400 normal-case my-1 w-full text-white">
+                      <FaTrash/>Delete</button>
                   </div>
                 </div>
               </div>

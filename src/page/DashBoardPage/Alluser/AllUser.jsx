@@ -1,6 +1,7 @@
 import { toast } from "react-toastify";
 import useUsers from "../../../hooks/useUsers";
 import TitleSection from "../../../component/Shared/TitleSection";
+import { FaUserCog } from 'react-icons/fa';
 
 const AllUser = () => {
   const [users, refetch] = useUsers();
@@ -74,7 +75,7 @@ const AllUser = () => {
                         {user?.role}
                       </span></td>
                     <th>
-                      <button onClick={()=>handleMakeAdmin(user?.useremail)} className={`btn bg-[tomato] text-white btn-xs normal-case ${user?.role === "admin" && "btn-disabled bg-slate-400" }`}>make Admin</button>
+                      <button onClick={()=>handleMakeAdmin(user?.useremail)} className={`btn bg-[tomato] text-white btn-xs normal-case ${user?.role === "admin" && "btn-disabled bg-slate-400" }`}><FaUserCog/> make Admin</button>
                     </th>
                   </tr>)
             }

@@ -14,7 +14,7 @@ const Transiction = () => {
 
   return (
     <div className="min-h-full w-full">
-      <TitleSection title="All Transictions" />
+      <TitleSection title="All Transactions" />
       <table className="table">
         {/* head */}
         <thead>
@@ -22,12 +22,12 @@ const Transiction = () => {
             <th>#</th>
             <th>Details</th>
             <th>Address</th>
-            <th>Transiction ID</th>
+            <th>Transaction ID</th>
             <th>Payment</th>
           </tr>
         </thead>
         <tbody>
-          {data.map((cartRow, idx) => (
+          {data.toReversed().map((cartRow, idx) => (
             <tr key={idx}>
               <th>{idx + 1}</th>
               <td>

@@ -1,13 +1,17 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import banner from "../../assets/image/Frame.png";
 import { useContext, useState } from "react";
 import { authContext } from "../../Auth/AuthProvider";
 import { toast } from "react-toastify";
 import useaddUser from "../../hooks/addUser";
+import Swal from "sweetalert2";
+
 const Register = () => {
   const [error, setErrror] = useState(false);
-  const { updateUserProfile, singUp, googleLogin,setLoading } = useContext(authContext);
+  const navigate=useNavigate();
+  const { updateUserProfile, singUp, googleLogin, setLoading } =
+    useContext(authContext);
   const {
     register,
     handleSubmit,
@@ -35,10 +39,30 @@ const Register = () => {
                 userphoto: currentUser.photoURL,
                 role: "user",
               };
-              useaddUser(data);
+              if(currentUser){
+                fetch("https://service-boss-server.vercel.app/user", {
+                method: "POST",
+                headers: {
+                  "content-type": "application/json",
+                },
+                body: JSON.stringify(data),
+                })
+                .then((res) => res.json())
+                .then((data) => {
+                  // console.log(data);
+                  Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Succesfully Register",
+                    showConfirmButton: false,
+                    timer: 1500,
+                  });
+                  navigate('/')
+                });
+              }
             })
             .catch((error) => {
-              setLoading(false)
+              setLoading(false);
               console.error(error.message);
               toast(`${error.message.slice(17)}`, { theme: "dark" });
             });

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import useUserCart from "../../../hooks/useUserCart";
 import { toast } from "react-toastify";
 import TitleSection from "../../../component/Shared/TitleSection";
+import { FaStripe, FaTrash } from "react-icons/fa";
 
 const UserCart = () => {
   const [cart,refetch] = useUserCart();
@@ -72,11 +73,11 @@ const UserCart = () => {
                 
                   
                 <td>{cartRow?.serviceID}</td>
-                <td>{cartRow?.price}</td>
+                <td>${cartRow?.price}</td>
                 <td className={`${cartRow?.status === "unpaid"?"text-red-500":"text-green-500"}`}>{cartRow?.status}</td>
                 <th>
-                  <button  className="btn bg-green-400 btn-xs"><Link to={`payment/${cartRow?._id}`}>Pay</Link></button>
-                  <button onClick={()=>handleDeleteCart(cartRow?._id)}  className="btn bg-green-400 btn-xs">Delete</button>
+                <Link to={`payment/${cartRow?._id}`}><button  className="btn bg-green-400 btn-xs text-white"><FaStripe/>Pay</button></Link>
+                  <button onClick={()=>handleDeleteCart(cartRow?._id)}  className="btn bg-green-400 btn-xs text-white"><FaTrash/>Delete</button>
                 </th>
               </tr>
             ))}
