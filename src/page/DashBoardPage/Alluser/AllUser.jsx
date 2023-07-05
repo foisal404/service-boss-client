@@ -70,11 +70,11 @@ const AllUser = () => {
                       <br />
                       
                     </td>
-                    <td><span className="badge badge-ghost badge-sm">
+                    <td><span className="badge badge-success text-white  badge-md">
                         {user?.role}
                       </span></td>
                     <th>
-                      <button onClick={()=>handleMakeAdmin(user?.useremail)} className={`btn bg-[tomato] btn-xs normal-case ${user?.role === "admin" && "btn-disabled bg-slate-400" }`}>make Admin</button>
+                      <button onClick={()=>handleMakeAdmin(user?.useremail)} className={`btn bg-[tomato] text-white btn-xs normal-case ${user?.role === "admin" && "btn-disabled bg-slate-400" }`}>make Admin</button>
                     </th>
                   </tr>)
             }

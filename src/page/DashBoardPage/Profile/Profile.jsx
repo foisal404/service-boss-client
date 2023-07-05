@@ -11,7 +11,7 @@ const Profile = () => {
   const profilUser= users.find(use=>use.useremail=== user.email)
   console.log(profilUser)
   return (
-    <div className="w-full min-h-full">
+    <div className="w-full min-h-screen">
       <TitleSection title={`${role.role} profile`} />
       <div className="p-10">
         <div className="hero w-full">

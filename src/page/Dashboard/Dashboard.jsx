@@ -2,6 +2,8 @@
 import { Link, Outlet } from "react-router-dom";
 import useRole from "../../hooks/useRole";
 import useUserCart from "../../hooks/useUserCart";
+import { CgProfile } from "react-icons/cg";
+import { FaHome, FaLuggageCart, FaMoneyCheckAlt, FaRegWindowRestore, FaServer, FaServicestack, FaUsers, FaWallet } from "react-icons/fa";
 
 const Dashboard = () => {
   const [role]=useRole();
@@ -27,29 +29,29 @@ const Dashboard = () => {
             {/* Sidebar content here */}
             {/* admin  */}
             <li>
-                <Link to="" className="my-auto ">Profile
+                <Link to="" className="my-auto "><CgProfile/> Profile
                 </Link>
               </li>
             {role.role === "admin" && (<>
               <li>
-                <Link to="allUser" className="my-auto">
+                <Link to="allUser" className="my-auto"><FaUsers/>
                   All Users
                 </Link>
               </li>
               <li>
                 <Link to="manageservies" className="my-auto">
-                  Manage Services
+                  <FaServer/>Manage Services
                 </Link>
               </li>
               <li>
                 <Link to="addservie" className="my-auto">
-                  Add Service
+                  <FaRegWindowRestore/>Add Service
                 </Link>
               </li>
               
               <li>
                 <Link to="transictions" className="my-auto">
-                  Transictions
+                  <FaMoneyCheckAlt/>Transictions
                 </Link>
               </li>
               </>
@@ -58,12 +60,12 @@ const Dashboard = () => {
             {role.role === "user" && (<>
               <li>
                 <Link to="usercart" className="my-auto">
-                  MY Cart <div className="badge badge-success text-white">+{cart.length}</div>
+                  <FaLuggageCart/>MY Cart <div className="badge badge-success text-white">+{cart.length}</div>
                 </Link>
               </li>
               <li>
                 <Link to="mypayment" className="my-auto">
-                  My Payment
+                  <FaWallet/>My Payment
                 </Link>
               </li>
              
@@ -72,12 +74,12 @@ const Dashboard = () => {
             <div className="divider"></div>
             <li>
               <Link to="/" className="my-auto">
-                Home
+                <FaHome/> Home
               </Link>
             </li>
             <li>
               <Link to="/allservies" className="my-auto">
-                All Services
+                <FaServicestack/>All Services
               </Link>
             </li>
           </ul>

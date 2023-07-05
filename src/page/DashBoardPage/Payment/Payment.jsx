@@ -3,6 +3,8 @@ import { loadStripe } from '@stripe/stripe-js';
 import CheeckOutForm from './CheeckOutForm';
 import { useLoaderData} from 'react-router-dom';
 
+// 4242424242424242
+// 4000056655665556
 const stripePromise=loadStripe(import.meta.env.VITE_Payment_Gateway_PK)
 const Payment = () => {
     const data = useLoaderData();

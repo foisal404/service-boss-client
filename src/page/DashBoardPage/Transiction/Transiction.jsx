@@ -21,6 +21,7 @@ const Transiction = () => {
           <tr>
             <th>#</th>
             <th>Details</th>
+            <th>Address</th>
             <th>Transiction ID</th>
             <th>Payment</th>
           </tr>
@@ -48,6 +49,7 @@ const Transiction = () => {
                 </div>
               </td>
 
+              <td>{cartRow?.email}</td>
               <td>{cartRow?.transactionId}</td>
               <td>$ {cartRow?.price}</td>
             </tr>
