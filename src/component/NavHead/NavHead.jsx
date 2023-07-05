@@ -37,7 +37,7 @@ const NavHead = () => {
         <>
           <li>
             <Link to="/dashboard" className="my-auto">
-              Dashboard  {role.role ==="user" && <div className="badge badge-secondary">+{cart?.length}</div>}
+              Dashboard  {role.role ==="user" && <div className="badge badge-success text-white">+{cart?.length}</div>}
             </Link>
           </li>
           <span className="mx-3 my-0">

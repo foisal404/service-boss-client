@@ -1,23 +1,20 @@
-import { useContext, useEffect, useState } from "react";
-import { authContext } from "../../../Auth/AuthProvider";
+import { useEffect, useState } from "react";
 import TitleSection from "../../../component/Shared/TitleSection";
 
-const Mypayment = () => {
+const Transiction = () => {
   const [data, setData] = useState([]);
-  const { user } = useContext(authContext);
   useEffect(() => {
     fetch(`http://localhost:5000/payments`)
       .then((res) => res.json())
       .then((data) => {
-        const newdata = data.filter((doc) => doc.email === user?.email);
-        console.log(data);
-        setData(newdata);
+        setData(data);
       });
-  }, [user?.email]);
-  console.log(data);
+  }, []);
+  console.log(data)
+
   return (
-    <div className="w-full min-h-screen p-5">
-      <TitleSection title='My Payment History' />
+    <div className="min-h-full w-full">
+      <TitleSection title="All Transictions" />
       <table className="table">
         {/* head */}
         <thead>
@@ -61,4 +58,4 @@ const Mypayment = () => {
   );
 };
 
-export default Mypayment;
+export default Transiction;

@@ -1,5 +1,6 @@
 import { toast } from "react-toastify";
 import useUsers from "../../../hooks/useUsers";
+import TitleSection from "../../../component/Shared/TitleSection";
 
 const AllUser = () => {
   const [users, refetch] = useUsers();
@@ -12,15 +13,19 @@ const AllUser = () => {
     .then(res=>res.json())
     .then(data=>{
         // console.log(data);
+        refetch();   
         if(data.modifiedCount>0){
-            refetch();   
             toast("User is now admin", { theme: "dark" });
+        }
+        else{
+          toast("Make admin failed");
         }
     })
   }
   return (
     <div className="w-full p-10">
-      <h2 className="flex justify-center">all user {users.length}</h2>
+      <TitleSection title={`All user`} />
+      <div className="text-end"><span className="badge badge-success text-white">+{users.length}</span></div>
       <div className="overflow-x-auto p-10">
         <table className="table">
           {/* head */}

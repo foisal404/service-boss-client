@@ -160,7 +160,7 @@ const DetailsService = () => {
               {/* Review  -------------------------------------------------------------*/}
               <h2 className="font-bold text-2xl">
                 Reviews{" "}
-                <div className="badge badge-secondary">+{comments.length}</div>
+                <div className="badge badge-success text-white">+{comments.length}</div>
               </h2>
               <div>
                 {comments.map((com, idx) => (

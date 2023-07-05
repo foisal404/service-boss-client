@@ -1,5 +1,7 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import TitleSection from "../../../component/Shared/TitleSection";
+import { toast } from "react-toastify";
 
 const AddService = () => {
   const {
@@ -50,8 +52,8 @@ const AddService = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         if (data.insertedId) {
-          console.log(data);
           Swal.fire({
             position: 'top-end',
             icon: 'success',
@@ -60,6 +62,9 @@ const AddService = () => {
             timer: 1500
           })
         }
+        else{
+          toast('Failed add service')
+        }
       });
   };
   //   service_details,
@@ -67,7 +72,8 @@ const AddService = () => {
   return (
     <section className="w-full px-20 p-10">
       <div>
-        <h2 className="text-center text-4xl">Add new Service</h2>
+        {/* <h2 className="text-center text-4xl">Add new Service</h2> */}
+        <TitleSection title='Add new Service' />
       </div>
       <div className="hero-content w-full">
         <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
@@ -252,10 +258,10 @@ const AddService = () => {
 
             <div className="form-control mt-2">
               <button
-                className="btn font-bold normal-case bg-slate-300"
+                className="btn font-bold normal-case bg-blue-400 text-white"
                 type="submit"
               >
-                Add product
+                Add Service
               </button>
             </div>
           </form>

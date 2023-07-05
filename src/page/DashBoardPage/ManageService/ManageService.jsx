@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import useServices from "../../../hooks/useServices";
 import { Link } from "react-router-dom";
+import TitleSection from "../../../component/Shared/TitleSection";
 
 const ManageService = () => {
 
@@ -28,7 +29,8 @@ const ManageService = () => {
   return (
     <section className="p-5">
       <div>
-        <h2 className="text-center text-4xl">Manage Services</h2>
+        {/* <h2 className="text-center text-4xl">Manage Services</h2> */}
+        <TitleSection title='Manage Services' />
       </div>
       <div className="grid grid-cols-1 gap-5 p-5">
         {services.toReversed().map((service) => (

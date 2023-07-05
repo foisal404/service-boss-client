@@ -26,6 +26,10 @@ const Dashboard = () => {
           <ul className="menu p-4 w-80 h-full bg-blue-200 text-base-content">
             {/* Sidebar content here */}
             {/* admin  */}
+            <li>
+                <Link to="" className="my-auto ">Profile
+                </Link>
+              </li>
             {role.role === "admin" && (<>
               <li>
                 <Link to="allUser" className="my-auto">
@@ -42,13 +46,9 @@ const Dashboard = () => {
                   Add Service
                 </Link>
               </li>
+              
               <li>
-                <Link to="/allservies" className="my-auto">
-                  Approve Professinals
-                </Link>
-              </li>
-              <li>
-                <Link to="/allservies" className="my-auto">
+                <Link to="transictions" className="my-auto">
                   Transictions
                 </Link>
               </li>
@@ -58,7 +58,7 @@ const Dashboard = () => {
             {role.role === "user" && (<>
               <li>
                 <Link to="usercart" className="my-auto">
-                  User Cart <div className="badge badge-secondary">+{cart.length}</div>
+                  MY Cart <div className="badge badge-success text-white">+{cart.length}</div>
                 </Link>
               </li>
               <li>

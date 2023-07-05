@@ -15,6 +15,8 @@ import UpdateService from "../../page/DashBoardPage/UpdateService/UpdateService"
 import UserCart from "../../page/DashBoardPage/userCart/UserCart";
 import Payment from "../../page/DashBoardPage/Payment/Payment";
 import Mypayment from "../../page/DashBoardPage/MyPayment/Mypayment";
+import Profile from "../../page/DashBoardPage/Profile/Profile";
+import Transiction from "../../page/DashBoardPage/Transiction/Transiction";
 
 const router = createBrowserRouter([
     {
@@ -49,8 +51,16 @@ const router = createBrowserRouter([
       element:<PrivateRoute><Dashboard/></PrivateRoute>,
       children:[
         {
+          path:'',
+          element:<Profile/>
+        },
+        {
           path:'allUser',
           element:<AllUser/>
+        },
+        {
+          path:'transictions',
+          element:<Transiction/>
         },
         {
           path:'usercart',

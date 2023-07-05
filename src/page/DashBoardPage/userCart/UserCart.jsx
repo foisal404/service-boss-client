@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import useUserCart from "../../../hooks/useUserCart";
 import { toast } from "react-toastify";
+import TitleSection from "../../../component/Shared/TitleSection";
 
 const UserCart = () => {
   const [cart,refetch] = useUserCart();
@@ -26,8 +27,12 @@ const UserCart = () => {
   }
   return (
     <div className=" w-full min-h-full p-5">
-      {cart.length}
       <div className="overflow-x-auto w-full ">
+        <TitleSection title='My Cart' />
+      
+        <div className="text-end">
+        <button className="badge badge-success text-white ">+{cart.length}</button>
+        </div>
         <table className="table">
           {/* head */}
           <thead>

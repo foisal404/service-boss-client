@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
+import { toast } from "react-toastify";
 import Swal from "sweetalert2";
+import TitleSection from "../../../component/Shared/TitleSection";
 
 
 const UpdateService = () => {
@@ -33,9 +35,8 @@ const UpdateService = () => {
             })
             .then(res=>res.json())
             .then(data=>{
+              console.log(data);
                 if(data.modifiedCount> 0){
-
-                    console.log(data);
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
@@ -44,12 +45,16 @@ const UpdateService = () => {
                         timer: 1500
                       })
                 }
+                else{
+                  toast("Failed to update")
+                }
             })
       }
     return (
         <section className="w-full px-20 p-10">
       <div>
-        <h2 className="text-center text-4xl">Update Service</h2>
+        {/* <h2 className="text-center text-4xl">Update Service</h2> */}
+        <TitleSection title='Update Service' />
       </div>
       <div className="hero-content w-full">
         <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
@@ -234,10 +239,10 @@ const UpdateService = () => {
 
             <div className="form-control mt-2">
               <button
-                className="btn font-bold normal-case bg-slate-300"
+                className="btn font-bold normal-case bg-blue-400 text-white"
                 type="submit"
               >
-                Update product
+                Update Service
               </button>
             </div>
           </form>
