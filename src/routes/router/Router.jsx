@@ -12,6 +12,9 @@ import AllUser from "../../page/DashBoardPage/Alluser/AllUser";
 import ManageService from "../../page/DashBoardPage/ManageService/ManageService";
 import AddService from "../../page/DashBoardPage/AddService/AddService";
 import UpdateService from "../../page/DashBoardPage/UpdateService/UpdateService";
+import UserCart from "../../page/DashBoardPage/userCart/UserCart";
+import Payment from "../../page/DashBoardPage/Payment/Payment";
+import Mypayment from "../../page/DashBoardPage/MyPayment/Mypayment";
 
 const router = createBrowserRouter([
     {
@@ -46,19 +49,32 @@ const router = createBrowserRouter([
       element:<PrivateRoute><Dashboard/></PrivateRoute>,
       children:[
         {
-          path:'dashboard/allUser',
+          path:'allUser',
           element:<AllUser/>
         },
         {
-          path:'dashboard/manageservies',
+          path:'usercart',
+          element:<UserCart/>
+        },
+        {
+          path:'mypayment',
+          element:<Mypayment/>
+        },
+        {
+          path:'manageservies',
           element:<ManageService/>
         },
         {
-          path:'dashboard/addservie',
+          path:'addservie',
           element:<AddService/>
         },
         {
-          path:'/dashboard/dashboard/manageservies/dashboard/:id',
+          path:'usercart/payment/:id',
+          element:<Payment/>,
+          loader:({params}) => fetch(`http://localhost:5000/cart?id=${params?.id}`)
+        },
+        {
+          path:'manageservies/:id',
           element:<UpdateService/>,
           loader:({params})=> fetch(`http://localhost:5000/service/${params.id}`)
 

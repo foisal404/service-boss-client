@@ -49,7 +49,7 @@ const ManageService = () => {
                     </p>
                   </div>
                   <div >
-                    <button className="btn bg-green-400 normal-case my-1 w-full"><Link to={`dashboard/${service?._id}`}>Update</Link></button>
+                    <button className="btn bg-green-400 normal-case my-1 w-full"><Link to={`${service?._id}`}>Update</Link></button>
                     <button onClick={()=>handleDelete(service?._id)} className="btn bg-red-400 normal-case my-1 w-full">Delete</button>
                   </div>
                 </div>

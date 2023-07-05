@@ -2,10 +2,15 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "../../Auth/AuthProvider";
 import { toast } from "react-toastify";
+import useRole from "../../hooks/useRole";
+import useUserCart from "../../hooks/useUserCart";
 
 const NavHead = () => {
   const { user, logOut } = useContext(authContext);
   console.log(user);
+ const [role]=useRole()
+ console.log(role)
+ const [cart] = useUserCart();
   const handleLogout = () => {
     logOut()
       .then(() => {
@@ -32,7 +37,7 @@ const NavHead = () => {
         <>
           <li>
             <Link to="/dashboard" className="my-auto">
-              Dashboard
+              Dashboard  {role.role ==="user" && <div className="badge badge-secondary">+{cart?.length}</div>}
             </Link>
           </li>
           <span className="mx-3 my-0">

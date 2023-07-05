@@ -61,8 +61,24 @@ const DetailsService = () => {
   const [comments, refetch] = useReview(_id);
   // console.log(comments);
   const handleCart = () => {
-    const data = { serviceID: _id, useremail: user?.email, status: "unpaid" };
+    const data = { serviceID: _id, useremail: user?.email,servicetitle:title,serviceimage:image, status: "unpaid",price };
     console.log(data);
+    fetch(`http://localhost:5000/cart/add`,{
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+    .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          toast("added to Cart");
+        } else {
+          toast("added failed");
+        }
+        console.log(data);
+      });
   };
   return (
     <div>
@@ -168,7 +184,7 @@ const DetailsService = () => {
                         </p>
                         <p>
                           <Rating
-                            placeholderRating={`${com?.rating}`}
+                            placeholderRating={`${com?.rating}`} readonly
                             emptySymbol={
                               <FaRegStar className="text-yellow-500" />
                             }

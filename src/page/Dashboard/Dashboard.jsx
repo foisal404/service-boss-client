@@ -1,9 +1,11 @@
 
 import { Link, Outlet } from "react-router-dom";
 import useRole from "../../hooks/useRole";
+import useUserCart from "../../hooks/useUserCart";
 
 const Dashboard = () => {
   const [role]=useRole();
+  const [cart]=useUserCart()
   console.log(role.role)
   return (
     <div>
@@ -19,24 +21,24 @@ const Dashboard = () => {
             Open drawer
           </label>
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side ">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+          <ul className="menu p-4 w-80 h-full bg-blue-200 text-base-content">
             {/* Sidebar content here */}
             {/* admin  */}
             {role.role === "admin" && (<>
               <li>
-                <Link to="dashboard/allUser" className="my-auto">
+                <Link to="allUser" className="my-auto">
                   All Users
                 </Link>
               </li>
               <li>
-                <Link to="dashboard/manageservies" className="my-auto">
+                <Link to="manageservies" className="my-auto">
                   Manage Services
                 </Link>
               </li>
               <li>
-                <Link to="dashboard/addservie" className="my-auto">
+                <Link to="addservie" className="my-auto">
                   Add Service
                 </Link>
               </li>
@@ -55,39 +57,18 @@ const Dashboard = () => {
             {/* user  */}
             {role.role === "user" && (<>
               <li>
-                <Link to="/allservies" className="my-auto">
-                  User Cart
+                <Link to="usercart" className="my-auto">
+                  User Cart <div className="badge badge-secondary">+{cart.length}</div>
                 </Link>
               </li>
               <li>
-                <Link to="/allservies" className="my-auto">
-                  User history
+                <Link to="mypayment" className="my-auto">
+                  My Payment
                 </Link>
               </li>
              
               </>
             )}
-            {/* Professinals  */}
-            {role.role === "Professinal" && (<>
-              <li>
-                <Link to="/allservies" className="my-auto">
-                  See Profile
-                </Link>
-              </li>
-              <li>
-                <Link to="/allservies" className="my-auto">
-                  Update Profile
-                </Link>
-              </li>
-              <li>
-                <Link to="/allservies" className="my-auto">
-                  user ingaged
-                </Link>
-              </li>
-             
-              </>
-            )}
-
             <div className="divider"></div>
             <li>
               <Link to="/" className="my-auto">
