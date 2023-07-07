@@ -1,13 +1,13 @@
 import icon1 from "../../../assets/image/icon/ico1.webp";
 import icon2 from "../../../assets/image/icon/ico2.webp";
 import icon3 from "../../../assets/image/icon/ico3.webp";
-import icon4 from "../../../assets/image/icon/ico4.png";
+import icon4 from "../../../assets/image/icon/icon-shield.png";
 const DetailsBanner = () => {
   return (
-    <div className="hero py-12 bg-base-200">
+    <div className="hero py-12">
       <div className="hero-content flex-col lg:flex-row-reverse w-full">
         <div className="lg:w-1/2">
-          <img src={icon4} className="max-w-sm rounded-lg shadow-2xl mx-auto" />
+          <img src={icon4} className="max-w-xs rounded-lg shadow-2xl mx-auto" />
           <div className="p-10">
             <p className="text-xl text-center">100% Quality Assured</p>
             <p className="text-xs text-center">

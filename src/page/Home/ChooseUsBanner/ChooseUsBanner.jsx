@@ -6,7 +6,7 @@ import icon6 from "../../../assets/image/icon/deliveryt.svg";
 
 const ChooseUsBanner = () => {
   return (
-    <div className="p-32">
+    <div className="py-10 p-5 md:p-32">
       <div className="text-center">
         <h2 className="text-5xl font-extrabold text-slate-600">Why Choose Us</h2>
         <p className="py-5">
@@ -14,7 +14,7 @@ const ChooseUsBanner = () => {
           Unwavering Commitment, <br /> and Unbeatable Satisfaction Guaranteed
         </p>
       </div>
-      <div className="grid grid-cols-5 justify-items-center place-items-center">
+      <div className="grid grid-cols-3 md:grid-cols-5 justify-items-center place-items-center">
         <div>
           <img src={icon1} className='mx-auto' alt="" />
           <p>Expert Team</p>

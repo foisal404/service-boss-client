@@ -12,7 +12,7 @@ import mensCareImg from "../../../assets/image/icon/salon.png";
 
 const OurServices = () => {
   return (
-    <div className="p-10 px-20">
+    <div className="p-12 px-20">
       <h2 className="text-center text-4xl py-10 text-slate-600 font-bold my-5">
         Service We Provide
       </h2>
