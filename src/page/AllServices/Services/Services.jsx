@@ -3,6 +3,7 @@ import ServiceCard from "../../../component/ServiceCard";
 import useServices from "../../../hooks/useServices";
 import "react-tabs/style/react-tabs.css";
 import { motion, useScroll } from "framer-motion";
+import TitleSection from "../../../component/Shared/TitleSection";
 
 const Services = () => {
   const { scrollYProgress } = useScroll();
@@ -45,23 +46,24 @@ const Services = () => {
       />
 
       <div className="p-10">
-        <h2 className="text-center text-4xl font-bold">All Services</h2>
+        {/* <h2 className="text-center text-4xl font-bold">All Services</h2> */}
+        <TitleSection title="All Services" />
         <div className="text-center p-5">
           <Tabs>
-            <TabList>
-              <Tab>All Services</Tab>
-              <Tab>AC Repair Services</Tab>
-              <Tab>Appliance Repair</Tab>
-              <Tab>Trips & Travels</Tab>
-              <Tab>Shifting</Tab>
-              <Tab>Beauty & Salon</Tab>
-              <Tab>Car Care Services</Tab>
-              <Tab>Cleaning & Pest Control</Tab>
-              <Tab>Painting & Renovation</Tab>
-              <Tab>Electric & Plumbing</Tab>
-              <Tab>Car Rental</Tab>
-              <Tab>Men's Care & Salon</Tab>
-            </TabList>
+              <TabList>
+                <Tab>All Services</Tab>
+                <Tab>AC Repair Services</Tab>
+                <Tab>Appliance Repair</Tab>
+                <Tab>Trips & Travels</Tab>
+                <Tab>Shifting</Tab>
+                <Tab>Beauty & Salon</Tab>
+                <Tab>Car Care Services</Tab>
+                <Tab>Cleaning & Pest Control</Tab>
+                <Tab>Painting & Renovation</Tab>
+                <Tab>Electric & Plumbing</Tab>
+                <Tab>Car Rental</Tab>
+                <Tab>Men's Care & Salon</Tab>
+              </TabList>
 
             <TabPanel>
               <div className="py-20 grid grid-cols-3 gap-5 justify-items-center">

@@ -25,7 +25,7 @@ const TopBanner = () => {
                 <span className=" bg-green-500 rounded-lg">Service</span> HERO
               </h1>
               <p className="mb-5 text-slate-300">
-                Where Service Meets Perfection!Introducing Service Boss, the
+                Where Service Meets Perfection!Introducing Service Hero, the
                 industry leader in delivering exceptional service experiences.
               </p>
               <button  className="btn animate-bounce normal-case">

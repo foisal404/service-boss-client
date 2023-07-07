@@ -8,8 +8,7 @@ const ChooseUsBanner = () => {
   return (
     <div className="p-32">
       <div className="text-center">
-        <p className="text-orange-500 font-bold">Core Features</p>
-        <h2 className="text-5xl font-extrabold">Why Choose Us</h2>
+        <h2 className="text-5xl font-extrabold text-slate-600">Why Choose Us</h2>
         <p className="py-5">
           Discover the Service Hero Difference: Unparalleled Expertise,
           Unwavering Commitment, <br /> and Unbeatable Satisfaction Guaranteed

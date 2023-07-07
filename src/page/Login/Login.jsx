@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import useaddUser from "../../hooks/addUser";
+import { FcGoogle, FcKey } from "react-icons/fc";
 
 
 const Login = () => {
@@ -84,11 +85,11 @@ const Login = () => {
               </label>
             </div>
             <div className="form-control mt-2">
-              <button className="btn font-bold normal-case bg-slate-300"  type="submit">Login</button>
+              <button className="btn font-bold normal-case bg-slate-300"  type="submit"><FcKey className="text-xl" />Login</button>
             </div>
           </form>
           <div className="card-body pt-0">
-            <button className="btn font-bold normal-case w-full bg-orange-200"  onClick={handleGoogle}>Google</button>
+            <button className="btn font-bold normal-case w-full bg-orange-200"  onClick={handleGoogle}><FcGoogle className="text-xl"/>Google</button>
           </div>
         </div>
       </div>

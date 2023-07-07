@@ -17,11 +17,13 @@ import Payment from "../../page/DashBoardPage/Payment/Payment";
 import Mypayment from "../../page/DashBoardPage/MyPayment/Mypayment";
 import Profile from "../../page/DashBoardPage/Profile/Profile";
 import Transiction from "../../page/DashBoardPage/Transiction/Transiction";
+import ErrorPage from "../../component/Shared/ErrorPage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Main/>,
+      errorElement:<ErrorPage/>,
       children:[
         {
             path:"/",
