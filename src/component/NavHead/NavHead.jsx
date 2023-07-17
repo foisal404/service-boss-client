@@ -94,7 +94,7 @@ const NavHead = () => {
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-xl">
-          serVice Heroo
+          serVice Hero
         </Link>
       </div>
       <div className="navbar-end hidden lg:flex">

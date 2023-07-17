@@ -17,7 +17,7 @@ const CheeckOutForm = ({price,data}) => {
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("https://service-boss-server.vercel.app/create-payment-intent", {
+    fetch("http://localhost:5000/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ price }),
@@ -76,10 +76,11 @@ const CheeckOutForm = ({price,data}) => {
         price:data?.price,
         serviceID:data?.serviceID,
         servicetitle:data?.servicetitle,
+        category:data?.category,
         serviceimage:data?.serviceimage,
         date: new Date(),
     }
-    fetch(`https://service-boss-server.vercel.app/payments/${data?._id}`,{
+    fetch(`http://localhost:5000/payments/${data?._id}`,{
       method:"POST",
       headers:{
         "content-type":"application/json"

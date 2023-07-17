@@ -4,7 +4,7 @@ const useReview=(serviceID)=>{
     const {refetch, data: comments = [] } = useQuery({
         queryKey: ['comments'],
         queryFn: async () => {
-            const res = await fetch(`https://service-boss-server.vercel.app/comments/${serviceID}`)
+            const res = await fetch(`http://localhost:5000/comments/${serviceID}`)
             return res.json();
         },
         

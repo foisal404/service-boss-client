@@ -6,7 +6,7 @@ const Mypayment = () => {
   const [data, setData] = useState([]);
   const { user } = useContext(authContext);
   useEffect(() => {
-    fetch(`https://service-boss-server.vercel.app/payments`)
+    fetch(`http://localhost:5000/payments`)
       .then((res) => res.json())
       .then((data) => {
         const newdata = data.filter((doc) => doc.email === user?.email);

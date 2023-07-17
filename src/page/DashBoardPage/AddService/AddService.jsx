@@ -43,7 +43,7 @@ const AddService = () => {
       },
     };
     console.log(newdata);
-    fetch("https://service-boss-server.vercel.app/service/add", {
+    fetch("http://localhost:5000/service/add", {
       method: "POST",
       headers: {
         "content-type": "application/json",

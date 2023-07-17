@@ -4,7 +4,7 @@ import TitleSection from "../../../component/Shared/TitleSection";
 const Transiction = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch(`https://service-boss-server.vercel.app/payments`)
+    fetch(`http://localhost:5000/payments`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -36,7 +36,7 @@ const Transiction = () => {
                     <div className="mask mask-squircle w-12 h-12">
                       <img
                         src={cartRow?.serviceimage}
-                        alt="Avatar Tailwind CSS Component"
+                        alt="Avatar "
                       />
                     </div>
                   </div>

@@ -3,6 +3,7 @@ import TitleSection from "../../../component/Shared/TitleSection";
 import useRole from "../../../hooks/useRole";
 import useUsers from "../../../hooks/useUsers";
 import { authContext } from "../../../Auth/AuthProvider";
+import ScaleChart from "./ScaleChart";
 
 const Profile = () => {
   const [role] = useRole();
@@ -10,9 +11,15 @@ const Profile = () => {
   const [users, refetch] = useUsers();
   const profilUser= users.find(use=>use.useremail=== user.email)
   console.log(profilUser)
+  // console.log(role.role)
+  
   return (
     <div className="w-full min-h-screen">
       <TitleSection title={`${role.role} profile`} />
+      {
+         role.role==="admin"&& <ScaleChart/>
+         
+     }
       <div className="p-10">
         <div className="hero w-full">
           <div className="hero-content w-full flex-col lg:flex-row-reverse">

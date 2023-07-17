@@ -40,7 +40,7 @@ const DetailsService = () => {
     };
     console.log(data);
     //post comment data
-    fetch("https://service-boss-server.vercel.app/comment/add", {
+    fetch("http://localhost:5000/comment/add", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -61,9 +61,9 @@ const DetailsService = () => {
   const [comments, refetch] = useReview(_id);
   // console.log(comments);
   const handleCart = () => {
-    const data = { serviceID: _id, useremail: user?.email,servicetitle:title,serviceimage:image, status: "unpaid",price };
+    const data = { serviceID: _id, useremail: user?.email,servicetitle:title,category,serviceimage:image, status: "unpaid",price };
     console.log(data);
-    fetch(`https://service-boss-server.vercel.app/cart/add`,{
+    fetch(`http://localhost:5000/cart/add`,{
       method: "POST",
       headers: {
         "content-type": "application/json",

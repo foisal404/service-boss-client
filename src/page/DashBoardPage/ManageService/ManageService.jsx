@@ -7,9 +7,10 @@ import { FaEdit, FaTrash } from 'react-icons/fa';
 const ManageService = () => {
 
   const [services, refetch] = useServices();
+  // console.log(services)
   const handleDelete=(id)=>{
     console.log(id);
-    fetch(`https://service-boss-server.vercel.app/service/${id}`,{
+    fetch(`http://localhost:5000/service/${id}`,{
       method:"DELETE"
     })
     .then(res=>res.json())
@@ -50,6 +51,7 @@ const ManageService = () => {
                       assumenda excepturi exercitationem quasi. In deleniti
                       eaque aut repudiandae et a id nisi.
                     </p>
+                    <p className="text-lg text-green-400">$ {service?.price}</p>
                   </div>
                   <div >
                     <button className="btn bg-green-500 normal-case my-1 w-full text-white"><FaEdit/><Link to={`${service?._id}`}>  Edit</Link></button>

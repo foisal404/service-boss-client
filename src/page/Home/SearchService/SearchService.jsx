@@ -9,7 +9,7 @@ const SearchService = () => {
     const search = searchRef.current.value;
     console.log(search);
     if (search) {
-      fetch(`https://service-boss-server.vercel.app/services?search=${search}`)
+      fetch(`http://localhost:5000/services?search=${search}`)
         .then((res) => res.json())
         .then((data) => {
           console.log(data.slice(0, 3));
