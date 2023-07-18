@@ -17,7 +17,9 @@ const Profile = () => {
     <div className="w-full min-h-screen">
       <TitleSection title={`${role.role} profile`} />
       {
-         role.role==="admin"&& <ScaleChart/>
+         role.role==="admin"&& <>
+         <ScaleChart/>
+         </>
          
      }
       <div className="p-10">

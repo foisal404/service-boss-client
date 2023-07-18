@@ -20,7 +20,7 @@ export default function ScaleChart() {
         setData(data);
       });
   }, []);
-  //   console.log(data);
+  console.log(data);
   let acSercvice = data.filter((ser) => ser.category === "AC Repair Services");
   let repairSercvice = data.filter(
     (ser) => ser.category === "Appliance Repair"
@@ -42,67 +42,83 @@ export default function ScaleChart() {
   let salonSercvice = data.filter(
     (ser) => ser.category === "Men's Care & Salon"
   );
-  //   const newDate = data.map((dt) => parseFloat(dt.date.slice(8, 10)));
-  //   console.log(newDate);
+
   const newData = [
     {
-      name: "acSercvice",
-      Sale_Rate: acSercvice?.length,
+      name: "AC Service",
+      Payment: acSercvice?.length,
     },
     {
-      name: "repair",
-      Sale_Rate: repairSercvice?.length,
+      name: "Repair",
+      Payment: repairSercvice?.length,
     },
     {
       name: "trips",
-      Sale_Rate: tripSercvice?.length,
+      Payment: tripSercvice?.length,
     },
     {
       name: "shift",
-      Sale_Rate: shiftSercvice?.length,
+      Payment: shiftSercvice?.length,
     },
     {
       name: "beauty",
-      Sale_Rate: beautySercvice?.length,
+      Payment: beautySercvice?.length,
     },
     {
       name: "car",
-      Sale_Rate: carSercvice?.length,
+      Payment: carSercvice?.length,
     },
 
     {
       name: "pest",
-      Sale_Rate: pestSercvice?.length,
+      Payment: pestSercvice?.length,
     },
 
     {
       name: "painting",
-      Sale_Rate: paintingSercvice?.length,
+      Payment: paintingSercvice?.length,
     },
     {
       name: "electric",
-      Sale_Rate: electricSercvice?.length,
+      Payment: electricSercvice?.length,
     },
     {
       name: "rent",
-      Sale_Rate: rentSercvice?.length,
+      Payment: rentSercvice?.length,
     },
     {
-      name: "salon",
-      Sale_Rate: salonSercvice?.length,
+      name: "Salon",
+      Payment: salonSercvice?.length,
     },
   ];
-  //   console.log(newData);
-
+  // console.log(newData);
+  // console.log(data.length);
+  // const TotalPrice = data.map((dt) => parseFloat(dt.price));
+  // console.log(TotalPrice);
+  const total = data?.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.price,
+    0
+  );
+ 
   return (
     <div>
-      <ResponsiveContainer width="90%" height={400} className={"mx-auto"} >
+      <div className="w-11/12 px-3 mx-auto grid grid-cols-2 gap-5 my-8">
+        <div className="flex gap-5 bg-green-300 p-10  text-lg text-slate-600 font-bold rounded-lg">
+          <p>Total Paid</p>
+          <p>${total.toFixed(2)}</p>
+          </div>
+        <div className="flex gap-5 bg-teal-400 p-10 text-lg text-slate-600 font-bold rounded-lg">
+          <p>Payment Completed</p>
+          <p>{data.length}</p>
+        </div>
+      </div>
+      <ResponsiveContainer width="90%" height={400} className={"mx-auto"}>
         <BarChart width={500} height={300} data={newData}>
-          <CartesianGrid strokeDasharray="3 3" />
+          {/* <CartesianGrid strokeDasharray="3 3" /> */}
           <XAxis dataKey="name" />
           <Tooltip />
           <Legend />
-          <Bar dataKey="Sale_Rate" fill="#8884d8" />
+          <Bar dataKey="Payment" fill="#4E8397"  />
         </BarChart>
       </ResponsiveContainer>
     </div>
