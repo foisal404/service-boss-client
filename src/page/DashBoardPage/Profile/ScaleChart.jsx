@@ -1,10 +1,8 @@
-import React, { PureComponent, useEffect, useState } from "react";
+import  {  useEffect, useState } from "react";
 import {
   BarChart,
   Bar,
   XAxis,
-  YAxis,
-  CartesianGrid,
   Tooltip,
   Legend,
   ResponsiveContainer,

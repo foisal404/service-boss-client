@@ -8,10 +8,14 @@ import { toast } from "react-toastify";
 import useReview from "../../../hooks/useReview";
 import Rating from "react-rating";
 import { FaRegStar, FaStar } from "react-icons/fa";
+import useMyPayment from "../../../hooks/useMyPayment";
 
 const DetailsService = () => {
   const [role] = useRole();
   const { user, loading } = useContext(authContext);
+  const [paymentServices]= useMyPayment();
+  const paydata=paymentServices?.map(dt=>dt?.serviceID)
+  // console.log(paydata)
   // console.log(role);
   const loader = useLoaderData();
   const {
@@ -25,7 +29,8 @@ const DetailsService = () => {
     price,
     unit,
   } = loader;
-  // console.log(loader);
+  // console.log(paydata.includes(loader?._id));
+
   const handleForm = (event) => {
     event.preventDefault();
     const from = event.target;
@@ -118,7 +123,7 @@ const DetailsService = () => {
               <h2 className="font-bold text-2xl">Open Disscution</h2>
               <div
                 className={`bg-slate-200 m-2 rounded-2xl ${
-                  user ? "" : " hidden"
+                  user && paydata?.includes(loader?._id) ? "" : " hidden"
                 }`}
               >
                 {/* from ------------------------------------------------------- */}
