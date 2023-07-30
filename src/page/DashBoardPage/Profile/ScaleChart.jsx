@@ -6,6 +6,7 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  YAxis,
 } from "recharts";
 
 export default function ScaleChart() {
@@ -114,6 +115,7 @@ export default function ScaleChart() {
         <BarChart width={500} height={300} data={newData}>
           {/* <CartesianGrid strokeDasharray="3 3" /> */}
           <XAxis dataKey="name" />
+          <YAxis dataKey="Payment" />
           <Tooltip />
           <Legend />
           <Bar dataKey="Payment" fill="#4E8397"  />

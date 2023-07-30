@@ -55,7 +55,7 @@ const SearchService = () => {
               </button>
             </div>
           </div>
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-1 lg:grid-cols-3">
             {data.map((doc) => (
               <ServiceCard key={doc._id} data={doc}></ServiceCard>
             )) || (

@@ -66,84 +66,84 @@ const Services = () => {
               </TabList>
 
             <TabPanel>
-              <div className="py-20 grid grid-cols-3 gap-5 justify-items-center">
+              <div className="py-20 grid  grid-cols-1  lg:grid-cols-3 gap-5 justify-items-center">
                 {services.map((doc) => (
                   <ServiceCard key={doc._id} data={doc} />
                 ))}
               </div>
             </TabPanel>
             <TabPanel>
-              <div className="py-20 grid grid-cols-3 gap-5 justify-items-center">
+              <div className="py-20 grid  grid-cols-1  lg:grid-cols-3 gap-5 justify-items-center">
                 {acSercvice.map((doc) => (
                   <ServiceCard key={doc._id} data={doc} />
                 ))}
               </div>
             </TabPanel>
             <TabPanel>
-              <div className="py-20 grid grid-cols-3 gap-5 justify-items-center">
+              <div className="py-20 grid  grid-cols-1  lg:grid-cols-3 gap-5 justify-items-center">
                 {repairSercvice.map((doc) => (
                   <ServiceCard key={doc._id} data={doc} />
                 ))}
               </div>
             </TabPanel>
             <TabPanel>
-              <div className="py-20 grid grid-cols-3 gap-5 justify-items-center">
+              <div className="py-20 grid  grid-cols-1  lg:grid-cols-3 gap-5 justify-items-center">
                 {tripSercvice.map((doc) => (
                   <ServiceCard key={doc._id} data={doc} />
                 ))}
               </div>
             </TabPanel>
             <TabPanel>
-              <div className="py-20 grid grid-cols-3 gap-5 justify-items-center">
+              <div className="py-20 grid  grid-cols-1  lg:grid-cols-3 gap-5 justify-items-center">
                 {shiftSercvice.map((doc) => (
                   <ServiceCard key={doc._id} data={doc} />
                 ))}
               </div>
             </TabPanel>
             <TabPanel>
-              <div className="py-20 grid grid-cols-3 gap-5 justify-items-center">
+              <div className="py-20 grid  grid-cols-1  lg:grid-cols-3 gap-5 justify-items-center">
                 {beautySercvice.map((doc) => (
                   <ServiceCard key={doc._id} data={doc} />
                 ))}
               </div>
             </TabPanel>
             <TabPanel>
-              <div className="py-20 grid grid-cols-3 gap-5 justify-items-center">
+              <div className="py-20 grid  grid-cols-1  lg:grid-cols-3 gap-5 justify-items-center">
                 {carSercvice.map((doc) => (
                   <ServiceCard key={doc._id} data={doc} />
                 ))}
               </div>
             </TabPanel>
             <TabPanel>
-              <div className="py-20 grid grid-cols-3 gap-5 justify-items-center">
+              <div className="py-20 grid  grid-cols-1  lg:grid-cols-3 gap-5 justify-items-center">
                 {pestSercvice.map((doc) => (
                   <ServiceCard key={doc._id} data={doc} />
                 ))}
               </div>
             </TabPanel>
             <TabPanel>
-              <div className="py-20 grid grid-cols-3 gap-5 justify-items-center">
+              <div className="py-20 grid  grid-cols-1  lg:grid-cols-3 gap-5 justify-items-center">
                 {paintingSercvice.map((doc) => (
                   <ServiceCard key={doc._id} data={doc} />
                 ))}
               </div>
             </TabPanel>
             <TabPanel>
-              <div className="py-20 grid grid-cols-3 gap-5 justify-items-center">
+              <div className="py-20 grid  grid-cols-1  lg:grid-cols-3 gap-5 justify-items-center">
                 {electricSercvice.map((doc) => (
                   <ServiceCard key={doc._id} data={doc} />
                 ))}
               </div>
             </TabPanel>
             <TabPanel>
-              <div className="py-20 grid grid-cols-3 gap-5 justify-items-center">
+              <div className="py-20 grid  grid-cols-1  lg:grid-cols-3 gap-5 justify-items-center">
                 {rentSercvice.map((doc) => (
                   <ServiceCard key={doc._id} data={doc} />
                 ))}
               </div>
             </TabPanel>
             <TabPanel>
-              <div className="py-20 grid grid-cols-3 gap-5 justify-items-center">
+              <div className="py-20 grid  grid-cols-1  lg:grid-cols-3 gap-5 justify-items-center">
                 {salonSercvice.map((doc) => (
                   <ServiceCard key={doc._id} data={doc} />
                 ))}

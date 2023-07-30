@@ -4,6 +4,7 @@ import useRole from "../../../hooks/useRole";
 import useUsers from "../../../hooks/useUsers";
 import { authContext } from "../../../Auth/AuthProvider";
 import ScaleChart from "./ScaleChart";
+// import { FaClone } from "react-icons/fa";
 
 const Profile = () => {
   const [role] = useRole();
@@ -11,7 +12,22 @@ const Profile = () => {
   const [users, refetch] = useUsers();
   const profilUser= users.find(use=>use.useremail=== user.email)
   console.log(profilUser)
-  // console.log(role.role)
+  // console.log(user)
+  // const handleAddress=(event)=>{
+  //   event.preventDefault();
+  //   const details=event.target.address.value;
+  //   const address=  {add : details};
+  //   // console.log(address)
+    
+  //     fetch(`http://localhost:5000/user/setaddress/${profilUser?.useremail}`,{
+  //       method: "PATCH",
+  //       headers:{
+  //         "content-type":"appliction/json"
+  //       },
+  //       body: JSON.stringify(address)
+  //     })
+  //   console.log(JSON.stringify(address))
+  // }
   
   return (
     <div className="w-full min-h-screen">
@@ -35,6 +51,11 @@ const Profile = () => {
               <p className="py-6">
                 {profilUser?.useremail}
               </p>
+              {/* <div>
+                {role.role==="user" && 
+                <form onSubmit={handleAddress}> <input type="text" name="address" placeholder="address"/> <button type="submit"><FaClone/></button> </form>
+                }
+              </div> */}
             </div>
           </div>
         </div>

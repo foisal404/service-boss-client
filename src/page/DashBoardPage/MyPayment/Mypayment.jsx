@@ -29,7 +29,7 @@ const Mypayment = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((cartRow, idx) => (
+          {data.toReversed().map((cartRow, idx) => (
             <tr key={idx}>
               <th>{idx + 1}</th>
               <td>
