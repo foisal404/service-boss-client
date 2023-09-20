@@ -45,7 +45,7 @@ const DetailsService = () => {
     };
     console.log(data);
     //post comment data
-    fetch("http://localhost:5000/comment/add", {
+    fetch("https://service-boss-server.vercel.app/comment/add", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -68,7 +68,7 @@ const DetailsService = () => {
   const handleCart = () => {
     const data = { serviceID: _id, useremail: user?.email,servicetitle:title,category,serviceimage:image, status: "unpaid",price };
     console.log(data);
-    fetch(`http://localhost:5000/cart/add`,{
+    fetch(`https://service-boss-server.vercel.app/cart/add`,{
       method: "POST",
       headers: {
         "content-type": "application/json",

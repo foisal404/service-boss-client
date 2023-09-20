@@ -10,7 +10,7 @@ const UserCart = () => {
   // console.log(cart);
   const handleDeleteCart=(id)=>{
     // console.log(id);
-    fetch(`http://localhost:5000/cart/delete/${id}`,{
+    fetch(`https://service-boss-server.vercel.app/cart/delete/${id}`,{
       method:"DELETE"
     })
     .then(res=>res.json())

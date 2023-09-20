@@ -55,7 +55,7 @@ const Register = () => {
                       role: "user",
                     };
                     if(currentUser){
-                      fetch("http://localhost:5000/user", {
+                      fetch("https://service-boss-server.vercel.app/user", {
                       method: "POST",
                       headers: {
                         "content-type": "application/json",

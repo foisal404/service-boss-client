@@ -19,7 +19,7 @@ const Profile = () => {
   //   const address=  {add : details};
   //   // console.log(address)
     
-  //     fetch(`http://localhost:5000/user/setaddress/${profilUser?.useremail}`,{
+  //     fetch(`https://service-boss-server.vercel.app/user/setaddress/${profilUser?.useremail}`,{
   //       method: "PATCH",
   //       headers:{
   //         "content-type":"appliction/json"

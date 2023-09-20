@@ -13,7 +13,7 @@ export default function ScaleChart() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/payments`)
+    fetch(`https://service-boss-server.vercel.app/payments`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);

@@ -8,7 +8,7 @@ const useUserCart = () => {
         queryKey: ['cart', user?.email],
         enabled: !loading,
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/cart/${user?.email}`)
+            const res = await fetch(`https://service-boss-server.vercel.app/cart/${user?.email}`)
             return res.json();
         },
         

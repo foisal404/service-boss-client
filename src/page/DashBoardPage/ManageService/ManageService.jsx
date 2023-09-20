@@ -10,7 +10,7 @@ const ManageService = () => {
   // console.log(services)
   const handleDelete=(id)=>{
     console.log(id);
-    fetch(`http://localhost:5000/service/${id}`,{
+    fetch(`https://service-boss-server.vercel.app/service/${id}`,{
       method:"DELETE"
     })
     .then(res=>res.json())

@@ -100,7 +100,7 @@ const NavHead = () => {
   );
 
   return (
-    <div className="navbar lg:px-32 bg-base-100 sticky top-0 z-10">
+    <div className={`navbar lg:px-32 bg-base-100 sticky top-0 z-10 ${theme !== "light" ?" bg-[#5bea90] text-white":"" }`}>
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
