@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "../../Auth/AuthProvider";
 import { toast } from "react-toastify";
 import useRole from "../../hooks/useRole";
 import useUserCart from "../../hooks/useUserCart";
+import { FaMoon } from "react-icons/fa";
+import { BsSun } from "react-icons/bs";
 
 const NavHead = () => {
   const { user, logOut } = useContext(authContext);
@@ -21,6 +23,22 @@ const NavHead = () => {
         toast(`${error.message.slice(17)}`, { theme: "dark" });
       });
   };
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
+  const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
   const navItems = (
     <>
       <li>
@@ -59,10 +77,25 @@ const NavHead = () => {
           </button>
         </>
       ) : (
-        <li>
+        <div className="flex items-center">
+          <li>
           <Link to="/login">Login</Link>
         </li>
+        </div>
       )}
+      <button className="btn btn-square btn-ghost">
+          <label className="swap swap-rotate w-12 h-12">
+            <input
+              type="checkbox"
+              onChange={handleToggle}
+              // show toggle  based on localstorage theme
+              checked={theme === "light" ? false : true}
+            />
+            <BsSun className="w-5 h-5 swap-on" />
+            <FaMoon alt="dark" className="w-5 h-5 swap-off" />
+          </label>
+        </button>
+      
     </>
   );
 
@@ -94,7 +127,7 @@ const NavHead = () => {
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-xl">
-          serVice Hero
+          SerVice Hero
         </Link>
       </div>
       <div className="navbar-end hidden lg:flex">
